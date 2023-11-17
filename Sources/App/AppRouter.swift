@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import ForecastSearchModule
 
 final class AppRouter {
     var window: UIWindow?
@@ -15,7 +16,8 @@ final class AppRouter {
     }
     
     func start() {
-        let navigationController = UINavigationController(rootViewController: UIViewController())
+        let viewController = ForecastSearchBuilder.make(service: app.service)
+        let navigationController = UINavigationController(rootViewController: viewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()
     }

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F42F21332B0780C7005F8033 /* ForecastSearchModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21322B0780C7005F8033 /* ForecastSearchModule.framework */; };
+		F42F21342B0780C7005F8033 /* ForecastSearchModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21322B0780C7005F8033 /* ForecastSearchModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F454372E2B077B9800C52A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454372D2B077B9800C52A7D /* AppDelegate.swift */; };
 		F45437372B077B9900C52A7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45437362B077B9900C52A7D /* Assets.xcassets */; };
 		F454373A2B077B9900C52A7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45437382B077B9900C52A7D /* LaunchScreen.storyboard */; };
@@ -24,6 +26,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F454374B2B077D8F00C52A7D /* WeatherAPI.framework in Embed Frameworks */,
+				F42F21342B0780C7005F8033 /* ForecastSearchModule.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -31,6 +34,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F42F21322B0780C7005F8033 /* ForecastSearchModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ForecastSearchModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F454372A2B077B9800C52A7D /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F454372D2B077B9800C52A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F45437362B077B9900C52A7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -47,6 +51,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F454374A2B077D8F00C52A7D /* WeatherAPI.framework in Frameworks */,
+				F42F21332B0780C7005F8033 /* ForecastSearchModule.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +107,7 @@
 		F45437482B077D8F00C52A7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F42F21322B0780C7005F8033 /* ForecastSearchModule.framework */,
 				F45437492B077D8F00C52A7D /* WeatherAPI.framework */,
 			);
 			name = Frameworks;

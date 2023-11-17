@@ -7,7 +7,7 @@
 
 import NetworkService
 import Common
-import CacheManager
+import Cache
 
 public protocol ForecastServiceable {
     func search(parameter: ForecastParameter) async -> Result<ForecastDTO, RequestError>

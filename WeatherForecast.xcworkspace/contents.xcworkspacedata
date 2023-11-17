@@ -5,6 +5,9 @@
       location = "container:WeatherForecast.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:ForecastSearchModule/ForecastSearchModule.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:WeatherAPI/WeatherAPI.xcodeproj">
    </FileRef>
    <FileRef
