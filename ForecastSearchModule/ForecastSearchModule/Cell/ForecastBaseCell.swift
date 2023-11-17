@@ -1,5 +1,5 @@
 //
-//  DailyCell.swift
+//  ForecastBaseCell.swift
 //  ForecastSearchModule
 //
 //  Created by Oğuz Öztürk on 17.11.2023.
@@ -10,15 +10,29 @@ import Common
 import WeatherAPI
 import Kingfisher
 
-final class DailyCell: UITableViewCell, ReusableView {
-    private lazy var weatherImageView: UIImageView = {
+protocol ForecastSearchResultCellProtocol: AnyObject {
+    associatedtype T
+    var presenter: T! { get set }
+    func setupLayout()
+    func configure()
+}
+
+class ForecastBaseCell<T>: UITableViewCell, ForecastSearchResultCellProtocol {
+    var presenter: T! {
+        didSet {
+            setupLayout()
+            configure()
+        }
+    }
+    
+    lazy var weatherImageView: UIImageView = {
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
         image.translatesAutoresizingMaskIntoConstraints = false
         return image
     }()
     
-    private lazy var dateLabel: UILabel = {
+    lazy var dateLabel: UILabel = {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .subheadline,
                                     compatibleWith: .init(legibilityWeight: .bold))
@@ -38,47 +52,38 @@ final class DailyCell: UITableViewCell, ReusableView {
         return view
     }()
     
-    private lazy var titleLabel: UILabel = {
+    
+    lazy var titleLabel: UILabel = {
         let label = UILabel()
-        label.font = .preferredFont(forTextStyle: .title3)
+        label.font = .preferredFont(forTextStyle: .body)
         return label
     }()
     
-    private lazy var descriptionLabel: UILabel = {
-        let label = UILabel()
-        label.font = .preferredFont(forTextStyle: .subheadline)
-        return label
+    lazy var middleStack: UIStackView = {
+        let stackView = UIStackView()
+        stackView.spacing = 4
+        return stackView
     }()
     
-    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
-        setupLayout()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupLayout() {
-        let labelStack = UIStackView(arrangedSubviews: [titleLabel, descriptionLabel])
+    func setupLayout() {
+        let labelStack = UIStackView(arrangedSubviews: [titleLabel, middleStack])
         labelStack.axis = .vertical
         labelStack.spacing = 8
-        let mainStack = UIStackView(arrangedSubviews: [dateLabel, firstSeperator,labelStack, secondSeperator, weatherImageView])
+        let mainStack = UIStackView(arrangedSubviews: [dateLabel,
+                                                       firstSeperator,
+                                                       labelStack,
+                                                       secondSeperator,
+                                                       weatherImageView])
         mainStack.spacing = 8
         addSubview(mainStack)
         mainStack.equalToSuperView(padding: .init(16))
         NSLayoutConstraint.activate([
-            dateLabel.widthAnchor.constraint(equalToConstant: 60),
+            dateLabel.widthAnchor.constraint(equalToConstant: 85),
             weatherImageView.widthAnchor.constraint(equalToConstant: 40),
             firstSeperator.widthAnchor.constraint(equalToConstant: 1),
             secondSeperator.widthAnchor.constraint(equalToConstant: 1),
         ])
     }
     
-    func configureWith(dto: DailyDTO) {
-        dateLabel.text = dto.day
-        titleLabel.text = dto.weather.descZip.capitalized
-        descriptionLabel.text = dto.high + "~" + dto.low + " | " + dto.cloudsStr + " " + dto.popStr
-        weatherImageView.kf.setImage(with: dto.weather.firstImage)
-    }
+    func configure() {}
 }

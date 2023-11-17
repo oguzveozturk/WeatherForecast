@@ -9,17 +9,18 @@ import WeatherAPI
 import CoreLocation
 
 protocol ForecastSearchPresenterProtocol: AnyObject {
-    var dailyResults:[DailyDTO] { get set }
+    var forecastDTO: ForecastDTO { get set }
     func load()
     func search(for location: CLLocationCoordinate2D)
     func geocodeAddress(for text: String?)
+    func didSelect(item at: Int)
 }
 
 final class ForecastSearchPresenter: NSObject, ForecastSearchPresenterProtocol {
-    private let view: ForecastSearchViewProtocol!
+    private let view: ForecastSearchControllerProtocol!
     private let interactor: ForecastSearchInteractorProtocol!
     private let router: ForecastSearchRouterProtocol!
-    var dailyResults = [DailyDTO]()
+    var forecastDTO: ForecastDTO = .zero
     
     private lazy var locationManager: CLLocationManager = {
         let manager = CLLocationManager()
@@ -28,7 +29,7 @@ final class ForecastSearchPresenter: NSObject, ForecastSearchPresenterProtocol {
         return manager
     }()
     
-    init(view: ForecastSearchViewProtocol,
+    init(view: ForecastSearchControllerProtocol,
          interactor: ForecastSearchInteractorProtocol,
          router: ForecastSearchRouterProtocol) {
         self.interactor = interactor
@@ -40,7 +41,6 @@ final class ForecastSearchPresenter: NSObject, ForecastSearchPresenterProtocol {
     
     func load() {
         locationManager.startUpdatingLocation()
-        view.searchForCurrentLocation()
     }
     
     func search(for location: CLLocationCoordinate2D) {
@@ -57,14 +57,20 @@ final class ForecastSearchPresenter: NSObject, ForecastSearchPresenterProtocol {
             self?.search(for: location)
         }
     }
+    
+    func didSelect(item at: Int) {
+        let selectedDay = forecastDTO.daily[at].dt
+        router.present(route: .hourlyDetail(.init(hourlyDTO: forecastDTO.hourly,
+                                                  selectedDay: selectedDay)))
+    }
 }
 
 extension ForecastSearchPresenter: ForecastSearchInteractorDelegate {
     func handleOutput(_ output: ForecastSearchInteractorOutput) {
         view.hideIndicator()
         switch output {
-        case .showDailyResults(let array):
-            dailyResults = array
+        case .showForecast(let forecast):
+            forecastDTO = forecast
             view.reloadData()
         case .showError(let error):
             view.presentAlert(text: error.localizedDescription)

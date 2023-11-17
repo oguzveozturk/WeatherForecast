@@ -25,7 +25,7 @@ extension ForecastEndpoint: Endpoint {
             return ["appid":"7b71ab4a3a64840af89d1143b16dcda4",
                     "lat":String(parameter.lat),
                     "lon":String(parameter.lon),
-                    "exclude":"current,minutely,alerts"]
+                    "exclude": parameter.excludes.joined(separator: ",")]
         }
     }
 

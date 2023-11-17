@@ -56,7 +56,7 @@ public struct HourlyDTO {
         self.rain = rain
     }
     
-    static var zero: HourlyDTO {
+   public static var zero: HourlyDTO {
         .init(dt: Date(),
               temp: 0,
               feelsLike: 0,
@@ -72,5 +72,47 @@ public struct HourlyDTO {
               weather: [],
               pop: 0,
               rain: .zero)
+    }
+}
+
+extension HourlyDTO {
+    
+    private static var dateFormatter: DateFormatter {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH:MM"
+        return dateFormatter
+    }
+    
+    private static var numberFormatter: NumberFormatter {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.maximumFractionDigits = 0
+        return numberFormatter
+    }
+    
+    private static var numberFormatter2: NumberFormatter {
+        let numberFormatter = NumberFormatter()
+        numberFormatter.numberStyle = .percent
+        return numberFormatter
+    }
+
+    func convert(_ temp: Double, isCelcius: Bool = true) -> Double {
+        let celsius = temp - 273.5
+        return isCelcius ? celsius : (celsius * 9 / 5 + 32)
+    }
+    
+    public var day: String {
+        return Self.dateFormatter.string(from: dt)
+    }
+    
+    public var popStr: String {
+        return "💧\(Self.numberFormatter2.string(for: pop) ?? "0%")"
+    }
+    
+    public var cloudsStr: String {
+        return "☁️\(clouds)%"
+    }
+
+    public var humidityStr: String {
+        return "Humidity: \(humidity)%"
     }
 }

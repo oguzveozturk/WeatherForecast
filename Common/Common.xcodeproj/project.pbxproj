@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F42F21372B078533005F8033 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21362B078533005F8033 /* GradientView.swift */; };
 		F438E82A2B02BBF100AB65AD /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = F438E8292B02BBF100AB65AD /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F438E8492B02C0FB00AB65AD /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E8482B02C0FB00AB65AD /* Array+Extension.swift */; };
 		F45436B02B06991000C52A7D /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436AF2B06991000C52A7D /* UITableViewCell+Extension.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F42F21362B078533005F8033 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
 		F438E8262B02BBF100AB65AD /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F438E8292B02BBF100AB65AD /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		F438E8482B02C0FB00AB65AD /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -36,9 +38,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		F42F21352B078529005F8033 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F42F21362B078533005F8033 /* GradientView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		F438E81C2B02BBF100AB65AD = {
 			isa = PBXGroup;
 			children = (
+				F42F21352B078529005F8033 /* View */,
 				F45436C42B06C54500C52A7D /* Helpers */,
 				F438E8302B02BBFD00AB65AD /* Extensions */,
 				F438E8282B02BBF100AB65AD /* Resources */,
@@ -163,6 +174,7 @@
 			files = (
 				F45436B42B069D5F00C52A7D /* UIEdgeInsets+Extension.swift in Sources */,
 				F45436B22B069C9D00C52A7D /* UIView+Extension.swift in Sources */,
+				F42F21372B078533005F8033 /* GradientView.swift in Sources */,
 				F45436C62B06C55000C52A7D /* AlertShowable.swift in Sources */,
 				F45436B02B06991000C52A7D /* UITableViewCell+Extension.swift in Sources */,
 				F438E8492B02C0FB00AB65AD /* Array+Extension.swift in Sources */,

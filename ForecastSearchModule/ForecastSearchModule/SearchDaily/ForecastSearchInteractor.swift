@@ -9,7 +9,7 @@ import WeatherAPI
 import CoreLocation
 
 enum ForecastSearchInteractorOutput {
-    case showDailyResults([DailyDTO])
+    case showForecast(ForecastDTO)
     case showError(Error)
 }
 
@@ -33,11 +33,12 @@ final class ForecastSearchInteractor: ForecastSearchInteractorProtocol {
     
     func search(for coordinates: CLLocationCoordinate2D) async {
         let result = await service.search(parameter: .init(lat: coordinates.latitude,
-                                                           lon: coordinates.longitude))
+                                                           lon: coordinates.longitude,
+                                                           formats: [.daily, .hourly]))
         DispatchQueue.main.async { [weak self] in
             switch result {
             case .success(let response):
-                self?.delegate?.handleOutput(.showDailyResults(response.daily))
+                self?.delegate?.handleOutput(.showForecast(response))
             case .failure(let err):
                 self?.delegate?.handleOutput(.showError(err))
             }

@@ -95,7 +95,7 @@ extension DailyDTO {
     
     private static var dateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "E, MMM, d"
+        dateFormatter.dateFormat = "EEE\nMMM, d"
         return dateFormatter
     }
     
@@ -129,11 +129,11 @@ extension DailyDTO {
     }
     
     public var popStr: String {
-        return "💧 \(Self.numberFormatter2.string(for: pop) ?? "0%")"
+        return "\(Self.numberFormatter2.string(for: pop) ?? "0%")"
     }
     
     public var cloudsStr: String {
-        return "☁️ \(clouds)%"
+        return "\(clouds)%"
     }
 
     public var humidityStr: String {

@@ -29,3 +29,9 @@ public struct ForecastDTO {
         self.daily = daily
     }
 }
+
+extension ForecastDTO {
+   public static var zero: ForecastDTO {
+        ForecastDTO(lat: 0, lon: 0, timezone: "", timezoneOffset: 0, hourly: [], daily: [])
+    }
+}

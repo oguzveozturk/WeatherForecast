@@ -10,8 +10,7 @@ import WeatherAPI
 import Common
 import CoreLocation
 
-protocol ForecastSearchViewProtocol: AnyObject {
-    func searchForCurrentLocation()
+protocol ForecastSearchControllerProtocol: AnyObject {
     func showIndicator()
     func hideIndicator()
     func reloadData()
@@ -37,11 +36,7 @@ final public class ForecastSearchController: UITableViewController {
     }
 }
 
-extension ForecastSearchController: ForecastSearchViewProtocol {
-    func searchForCurrentLocation() {
-        
-    }
-    
+extension ForecastSearchController: ForecastSearchControllerProtocol {
     func showIndicator() {
         indicator.startAnimating()
     }
@@ -67,12 +62,12 @@ extension ForecastSearchController: UISearchBarDelegate {
 
 extension ForecastSearchController {
     public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        presenter.dailyResults.count
+        presenter.forecastDTO.daily.count
     }
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DailyCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.configureWith(dto: presenter.dailyResults[indexPath.row])
+        cell.presenter = .init(dailyDTO: presenter.forecastDTO.daily[indexPath.row], view: cell)
         return cell
     }
     
@@ -82,6 +77,7 @@ extension ForecastSearchController {
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+        presenter.didSelect(item: indexPath.row)
     }
 }
 

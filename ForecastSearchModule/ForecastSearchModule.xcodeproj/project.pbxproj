@@ -7,6 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F42F21392B0789B6005F8033 /* DailyCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21382B0789B6005F8033 /* DailyCellPresenter.swift */; };
+		F42F21442B07A0F2005F8033 /* ForecastHourlyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21432B07A0F2005F8033 /* ForecastHourlyController.swift */; };
+		F42F21462B07A101005F8033 /* ForecastHourlyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21452B07A101005F8033 /* ForecastHourlyBuilder.swift */; };
+		F42F21482B07A10A005F8033 /* ForecastHourlyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21472B07A10A005F8033 /* ForecastHourlyPresenter.swift */; };
+		F42F214E2B07AC22005F8033 /* ForecastBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F214D2B07AC22005F8033 /* ForecastBaseCell.swift */; };
+		F42F21502B07B7AB005F8033 /* HourlyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F214F2B07B7AB005F8033 /* HourlyCell.swift */; };
+		F42F21522B07B7CC005F8033 /* HourlyCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21512B07B7CC005F8033 /* HourlyCellPresenter.swift */; };
 		F45436AE2B06987E00C52A7D /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436AD2B06987E00C52A7D /* DailyCell.swift */; };
 		F45436B72B069F2E00C52A7D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F45436B62B069F2E00C52A7D /* Kingfisher */; };
 		F45436B92B06BA7B00C52A7D /* ForecastSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436B82B06BA7B00C52A7D /* ForecastSearchPresenter.swift */; };
@@ -49,6 +56,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		F42F21382B0789B6005F8033 /* DailyCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCellPresenter.swift; sourceTree = "<group>"; };
+		F42F21432B07A0F2005F8033 /* ForecastHourlyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastHourlyController.swift; sourceTree = "<group>"; };
+		F42F21452B07A101005F8033 /* ForecastHourlyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastHourlyBuilder.swift; sourceTree = "<group>"; };
+		F42F21472B07A10A005F8033 /* ForecastHourlyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastHourlyPresenter.swift; sourceTree = "<group>"; };
+		F42F214D2B07AC22005F8033 /* ForecastBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastBaseCell.swift; sourceTree = "<group>"; };
+		F42F214F2B07B7AB005F8033 /* HourlyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCell.swift; sourceTree = "<group>"; };
+		F42F21512B07B7CC005F8033 /* HourlyCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCellPresenter.swift; sourceTree = "<group>"; };
 		F45436AD2B06987E00C52A7D /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
 		F45436B82B06BA7B00C52A7D /* ForecastSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSearchPresenter.swift; sourceTree = "<group>"; };
 		F45436BA2B06BAE000C52A7D /* ForecastSearchBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSearchBuilder.swift; sourceTree = "<group>"; };
@@ -87,12 +101,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F45436AC2B06986C00C52A7D /* View */ = {
+		F42F21412B07A0AA005F8033 /* SearchDaily */ = {
+			isa = PBXGroup;
+			children = (
+				F4719FBA2B066A2B008C9D6E /* ForecastSearchController.swift */,
+				F45436BA2B06BAE000C52A7D /* ForecastSearchBuilder.swift */,
+				F45436B82B06BA7B00C52A7D /* ForecastSearchPresenter.swift */,
+				F45436BC2B06BAF300C52A7D /* ForecastSearchInteractor.swift */,
+				F45436BE2B06BB0200C52A7D /* ForecastSearchRouter.swift */,
+			);
+			path = SearchDaily;
+			sourceTree = "<group>";
+		};
+		F42F21422B07A0B8005F8033 /* DetailHourly */ = {
+			isa = PBXGroup;
+			children = (
+				F42F21432B07A0F2005F8033 /* ForecastHourlyController.swift */,
+				F42F21452B07A101005F8033 /* ForecastHourlyBuilder.swift */,
+				F42F21472B07A10A005F8033 /* ForecastHourlyPresenter.swift */,
+			);
+			path = DetailHourly;
+			sourceTree = "<group>";
+		};
+		F45436AC2B06986C00C52A7D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
 				F45436AD2B06987E00C52A7D /* DailyCell.swift */,
+				F42F21382B0789B6005F8033 /* DailyCellPresenter.swift */,
+				F42F214D2B07AC22005F8033 /* ForecastBaseCell.swift */,
+				F42F214F2B07B7AB005F8033 /* HourlyCell.swift */,
+				F42F21512B07B7CC005F8033 /* HourlyCellPresenter.swift */,
 			);
-			path = View;
+			path = Cell;
 			sourceTree = "<group>";
 		};
 		F4719F852B0668CE008C9D6E = {
@@ -118,12 +158,9 @@
 		F4719F912B0668CE008C9D6E /* ForecastSearchModule */ = {
 			isa = PBXGroup;
 			children = (
-				F45436AC2B06986C00C52A7D /* View */,
-				F4719FBA2B066A2B008C9D6E /* ForecastSearchController.swift */,
-				F45436BA2B06BAE000C52A7D /* ForecastSearchBuilder.swift */,
-				F45436B82B06BA7B00C52A7D /* ForecastSearchPresenter.swift */,
-				F45436BC2B06BAF300C52A7D /* ForecastSearchInteractor.swift */,
-				F45436BE2B06BB0200C52A7D /* ForecastSearchRouter.swift */,
+				F42F21422B07A0B8005F8033 /* DetailHourly */,
+				F42F21412B07A0AA005F8033 /* SearchDaily */,
+				F45436AC2B06986C00C52A7D /* Cell */,
 			);
 			path = ForecastSearchModule;
 			sourceTree = "<group>";
@@ -272,12 +309,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42F214E2B07AC22005F8033 /* ForecastBaseCell.swift in Sources */,
+				F42F21482B07A10A005F8033 /* ForecastHourlyPresenter.swift in Sources */,
+				F42F21392B0789B6005F8033 /* DailyCellPresenter.swift in Sources */,
 				F4719FBB2B066A2B008C9D6E /* ForecastSearchController.swift in Sources */,
 				F45436BD2B06BAF300C52A7D /* ForecastSearchInteractor.swift in Sources */,
 				F45436B92B06BA7B00C52A7D /* ForecastSearchPresenter.swift in Sources */,
+				F42F21502B07B7AB005F8033 /* HourlyCell.swift in Sources */,
+				F42F21462B07A101005F8033 /* ForecastHourlyBuilder.swift in Sources */,
 				F45436BF2B06BB0200C52A7D /* ForecastSearchRouter.swift in Sources */,
 				F45436BB2B06BAE000C52A7D /* ForecastSearchBuilder.swift in Sources */,
 				F45436AE2B06987E00C52A7D /* DailyCell.swift in Sources */,
+				F42F21522B07B7CC005F8033 /* HourlyCellPresenter.swift in Sources */,
+				F42F21442B07A0F2005F8033 /* ForecastHourlyController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

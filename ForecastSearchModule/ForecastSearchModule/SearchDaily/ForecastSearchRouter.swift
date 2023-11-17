@@ -6,9 +6,10 @@
 //
 
 import UIKit
+import WeatherAPI
 
 enum ForecastSearchRoute {
-    case hourlyDetail
+    case hourlyDetail(ForecastHourlyBuilderData)
 }
 
 protocol ForecastSearchRouterProtocol: AnyObject {
@@ -24,8 +25,9 @@ final class ForecastSearchRouter: ForecastSearchRouterProtocol {
     
     func present(route: ForecastSearchRoute) {
         switch route {
-        case .hourlyDetail:
-            break
+        case .hourlyDetail(let builderData):
+            let vc = ForecastHourlyBuilder.make(builderData)
+            view.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
