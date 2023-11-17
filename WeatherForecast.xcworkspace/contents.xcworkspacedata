@@ -5,6 +5,15 @@
       location = "container:WeatherForecast.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:WeatherAPI/WeatherAPI.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:NetworkService/NetworkService.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Cache/Cache.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Common/Common.xcodeproj">
    </FileRef>
 </Workspace>
