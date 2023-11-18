@@ -19,7 +19,7 @@ final class ForecastBaseCellPresenter<DTO>: ForecastSearchResultCellPresenterPro
 
     func load() {
         view?.setupLayout()
-        view?.configure()
+        view?.configure(dto: dto)
     }
     
     init(dto: DTO, view: any ForecastSearchResultCellProtocol) {

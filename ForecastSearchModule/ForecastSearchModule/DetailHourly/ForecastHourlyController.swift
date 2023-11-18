@@ -13,14 +13,28 @@ public protocol ForecastHourlyControllerProtocol: AnyObject {
     func setEmptyMessage(text: String)
 }
 
+private extension ForecastHourlyController {
+    enum Constants {
+        static let rowHeight: CGFloat = 80
+    }
+}
+
 final class ForecastHourlyController: UITableViewController {
     var presenter: ForecastHourlyPresenterProtocol!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(HourlyCell.self)
-        view.backgroundColor = .systemBackground
+        configureUI()
+        prepareTableview()
         presenter.load()
+    }
+    
+    private func configureUI() {
+        view.backgroundColor = .systemBackground
+    }
+    
+    private func prepareTableview() {
+        tableView.register(HourlyCell.self)
     }
 }
 
@@ -46,6 +60,6 @@ extension ForecastHourlyController {
     }
     
     public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        80
+        Constants.rowHeight
     }
 }

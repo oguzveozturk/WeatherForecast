@@ -6,7 +6,6 @@
 //
 
 import WeatherAPI
-import CoreLocation
 
 enum ForecastSearchInteractorOutput {
     case showForecast(ForecastDTO)

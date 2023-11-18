@@ -11,10 +11,18 @@ import Common
 import WeatherAPI
 import Kingfisher
 
-final class HourlyCell: ForecastBaseCell<ForecastBaseCellPresenter<HourlyDTO>>, ReusableView {
-    private lazy var cloudLabel = labelGenerator(imageName: "cloud.fill")
-    private lazy var rainLabel = labelGenerator(imageName: "drop.fill")
-    private lazy var humidityLabel = labelGenerator(imageName: "humidity.fill")
+private extension HourlyCell {
+    enum Constants {
+        static let cloudImageName = "cloud.fill"
+        static let rainImageName = "drop.fill"
+        static let humidityImageName = "humidity.fill"
+    }
+}
+
+final class HourlyCell: ForecastBaseCell<ForecastBaseCellPresenter<HourlyDTO>, HourlyDTO>, ReusableView {
+    private lazy var cloudLabel = labelGenerator(imageName: Constants.cloudImageName)
+    private lazy var rainLabel = labelGenerator(imageName: Constants.rainImageName)
+    private lazy var humidityLabel = labelGenerator(imageName: Constants.rainImageName)
     
     func labelGenerator(imageName: String) -> UIButton {
         let button = UIButton()
@@ -31,12 +39,12 @@ final class HourlyCell: ForecastBaseCell<ForecastBaseCellPresenter<HourlyDTO>>, 
         middleStack.addArrangedSubviews(cloudLabel, rainLabel, humidityLabel)
     }
     
-    override func configure() {
-        dateLabel.text = presenter.dto.time
-        titleLabel.text = presenter.dto.weather.descZip.capitalized
-        rainLabel.setTitle(presenter.dto.popStr, for: .normal)
-        cloudLabel.setTitle(presenter.dto.cloudsStr, for: .normal)
-        humidityLabel.setTitle(presenter.dto.humidityStr, for: .normal)
-        weatherImageView.kf.setImage(with: presenter.dto.weather.firstImage)
+    override func configure(dto: HourlyDTO) {
+        dateLabel.text = dto.time
+        titleLabel.text = dto.weather.descZip.capitalized
+        rainLabel.setTitle(dto.popStr, for: .normal)
+        cloudLabel.setTitle(dto.cloudsStr, for: .normal)
+        humidityLabel.setTitle(dto.humidityStr, for: .normal)
+        weatherImageView.kf.setImage(with: dto.weather.firstImage)
     }
 }

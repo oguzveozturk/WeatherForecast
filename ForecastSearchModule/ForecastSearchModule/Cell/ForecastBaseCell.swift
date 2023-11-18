@@ -7,21 +7,32 @@
 
 import UIKit
 import Common
-import WeatherAPI
-import Kingfisher
 
 protocol ForecastSearchResultCellProtocol: AnyObject {
-    associatedtype T
-    var presenter: T! { get set }
+    associatedtype Presenter
+    associatedtype Model
+    var presenter: Presenter! { get set }
     func setupLayout()
-    func configure()
+    func configure(dto: Model)
 }
 
-class ForecastBaseCell<T>: UITableViewCell, ForecastSearchResultCellProtocol {
-    var presenter: T! {
+private extension ForecastBaseCell {
+    enum Constants {
+        static var dateLabelMaxLineCount: Int { 2  }
+        static var middleStackSpacing: CGFloat { 4 }
+        static var labelStackSpacing: CGFloat { 8 }
+        static var mainStackSpacing: CGFloat { 8 }
+        static var mainStackPading: UIEdgeInsets { .init(16) }
+        static var dateLabelWith: CGFloat { 55 }
+        static var weatherImageWidth: CGFloat { 40 }
+        static var seperatorTickness: CGFloat { 1 }
+    }
+}
+
+class ForecastBaseCell<Presenter: ForecastSearchResultCellPresenterProtocol, Model>: UITableViewCell, ForecastSearchResultCellProtocol {
+    var presenter: Presenter! {
         didSet {
-            setupLayout()
-            configure()
+            presenter.load()
         }
     }
     
@@ -37,7 +48,7 @@ class ForecastBaseCell<T>: UITableViewCell, ForecastSearchResultCellProtocol {
         label.font = .preferredFont(forTextStyle: .subheadline,
                                     compatibleWith: .init(legibilityWeight: .bold))
         label.textAlignment = .center
-        label.numberOfLines = 2
+        label.numberOfLines = Constants.dateLabelMaxLineCount
         return label
     }()
     
@@ -62,7 +73,7 @@ class ForecastBaseCell<T>: UITableViewCell, ForecastSearchResultCellProtocol {
     
     lazy var middleStack: UIStackView = {
         let stackView = UIStackView()
-        stackView.spacing = 4
+        stackView.spacing = Constants.middleStackSpacing
         stackView.alignment = .center
         stackView.distribution = .fill
         return stackView
@@ -72,22 +83,22 @@ class ForecastBaseCell<T>: UITableViewCell, ForecastSearchResultCellProtocol {
         let labelStack = UIStackView(arrangedSubviews: [titleLabel, middleStack])
         labelStack.axis = .vertical
         labelStack.distribution = .equalSpacing
-        labelStack.spacing = 8
+        labelStack.spacing = Constants.labelStackSpacing
         let mainStack = UIStackView(arrangedSubviews: [dateLabel,
                                                        firstSeperator,
                                                        labelStack,
                                                        secondSeperator,
                                                        weatherImageView])
-        mainStack.spacing = 8
+        mainStack.spacing = Constants.mainStackSpacing
         addSubview(mainStack)
-        mainStack.equalToSuperView(padding: .init(16))
+        mainStack.equalToSuperView(padding: Constants.mainStackPading)
         NSLayoutConstraint.activate([
-            dateLabel.widthAnchor.constraint(equalToConstant: 55),
-            weatherImageView.widthAnchor.constraint(equalToConstant: 40),
-            firstSeperator.widthAnchor.constraint(equalToConstant: 1),
-            secondSeperator.widthAnchor.constraint(equalToConstant: 1),
+            dateLabel.widthAnchor.constraint(equalToConstant: Constants.dateLabelWith),
+            weatherImageView.widthAnchor.constraint(equalToConstant: Constants.weatherImageWidth),
+            firstSeperator.widthAnchor.constraint(equalToConstant: Constants.seperatorTickness),
+            secondSeperator.widthAnchor.constraint(equalToConstant: Constants.seperatorTickness),
         ])
     }
     
-    func configure() {}
+    func configure(dto: Model) {}
 }

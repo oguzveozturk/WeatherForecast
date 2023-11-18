@@ -16,7 +16,7 @@ public struct ForecastHourlyBuilderData {
 public final class ForecastHourlyBuilder {
     public static func make(_ forecastHourlyBuilderData: ForecastHourlyBuilderData) -> UIViewController {
         let view = ForecastHourlyController()
-        let presenter = ForecastHourlyPresenter(view: view, hourlyDTO: forecastHourlyBuilderData.hourlyDTO, currentDay: forecastHourlyBuilderData.selectedDay)
+        let presenter = ForecastHourlyPresenter(view: view, hourlyDTO: forecastHourlyBuilderData.hourlyDTO, selectedDay: forecastHourlyBuilderData.selectedDay)
         view.presenter = presenter
         return view
     }

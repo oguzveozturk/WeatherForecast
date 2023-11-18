@@ -8,7 +8,6 @@
 import UIKit
 import WeatherAPI
 import Common
-import CoreLocation
 
 protocol ForecastSearchControllerProtocol: AlertShowable {
     func setBarMenuTitle(_ text: String)
@@ -17,11 +16,18 @@ protocol ForecastSearchControllerProtocol: AlertShowable {
     func reloadData()
 }
 
+private extension ForecastSearchController {
+    enum Constants {
+        static let indicatorFrame: CGRect = .init(x: 0, y: 0, width: 20, height: 20)
+        static let rowHeight: CGFloat = 80
+    }
+}
+
 final public class ForecastSearchController: UITableViewController {
     var presenter: ForecastSearchPresenterProtocol!
     
     private lazy var indicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        let indicator = UIActivityIndicatorView(frame: Constants.indicatorFrame)
         indicator.style = .large
         return indicator
     }()
@@ -106,7 +112,7 @@ extension ForecastSearchController {
     }
     
     public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        80 // move to constant (private extension)
+        Constants.rowHeight
     }
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
