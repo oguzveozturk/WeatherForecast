@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct HourlyResponse: Codable {
+public struct HourlyResponse: Codable {
     let dt: Date?
     let temp: Double?
     let feelsLike: Double?

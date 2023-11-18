@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AppLogger
 
 final public class Cache<Key: Hashable, Value> {
     private let wrapped = NSCache<WrappedKey, Entry>()
@@ -149,7 +150,7 @@ extension Cache where Key: Codable, Value: Codable {
     public static func fromDisk(file name: String, using fileManager: FileManager = .default) ->  Cache<Key, Value>? {
         let folderURLs = fileManager.urls(for: .cachesDirectory, in: .userDomainMask)
         let fileURL = folderURLs[0].appendingPathComponent(name + ".cache")
-        print(fileURL)
+        AppLogger.log(tag: .locals, fileURL)
         guard let data = try? Data(contentsOf: fileURL) else { return nil }
         return try? JSONDecoder().decode(Cache<Key, Value>.self, from: data)
     }

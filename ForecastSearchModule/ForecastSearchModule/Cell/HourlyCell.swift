@@ -8,7 +8,7 @@
 
 import UIKit
 import Common
-import WeatherAPI
+import struct WeatherAPI.HourlyDTO
 import Kingfisher
 
 private extension HourlyCell {
@@ -16,13 +16,14 @@ private extension HourlyCell {
         static let cloudImageName = "cloud.fill"
         static let rainImageName = "drop.fill"
         static let humidityImageName = "humidity.fill"
+        static let windImageName = "wind"
     }
 }
 
-final class HourlyCell: ForecastBaseCell<ForecastBaseCellPresenter<HourlyDTO>, HourlyDTO>, ReusableView {
-    private lazy var cloudLabel = labelGenerator(imageName: Constants.cloudImageName)
+final class HourlyCell: ForecastBaseCell<ForecastBaseCellPresenter<HourlyDTO>>, ReusableView {
     private lazy var rainLabel = labelGenerator(imageName: Constants.rainImageName)
-    private lazy var humidityLabel = labelGenerator(imageName: Constants.rainImageName)
+    private lazy var humidityLabel = labelGenerator(imageName: Constants.humidityImageName)
+    private lazy var windLabel = labelGenerator(imageName: Constants.windImageName)
     
     func labelGenerator(imageName: String) -> UIButton {
         let button = UIButton()
@@ -36,15 +37,15 @@ final class HourlyCell: ForecastBaseCell<ForecastBaseCellPresenter<HourlyDTO>, H
     override func setupLayout() {
         super.setupLayout()
         middleStack.distribution = .equalSpacing
-        middleStack.addArrangedSubviews(cloudLabel, rainLabel, humidityLabel)
+        middleStack.addArrangedSubviews(rainLabel, humidityLabel, windLabel)
     }
     
-    override func configure(dto: HourlyDTO) {
-        dateLabel.text = dto.time
-        titleLabel.text = dto.weather.descZip.capitalized
-        rainLabel.setTitle(dto.popStr, for: .normal)
-        cloudLabel.setTitle(dto.cloudsStr, for: .normal)
-        humidityLabel.setTitle(dto.humidityStr, for: .normal)
-        weatherImageView.kf.setImage(with: dto.weather.firstImage)
+    override func configure() {
+        dateLabel.text = presenter.dto.time
+        titleLabel.text = presenter.dto.weather.descZip.capitalized
+        rainLabel.setTitle(presenter.dto.rainStr, for: .normal)
+        humidityLabel.setTitle(presenter.dto.humidityStr, for: .normal)
+        windLabel.setTitle(presenter.dto.windStr, for: .normal)
+        weatherImageView.kf.setImage(with: presenter.dto.weather.firstImage)
     }
 }

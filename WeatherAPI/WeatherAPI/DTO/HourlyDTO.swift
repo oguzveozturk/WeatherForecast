@@ -92,15 +92,15 @@ extension HourlyDTO {
         Self.dateFormatter.string(from: dt)
     }
     
-    public var popStr: String {
+    public var rainStr: String {
         "\(Self.numberFormatter.string(for: pop) ?? "0%")"
     }
     
-    public var cloudsStr: String {
-        "\(clouds)%"
-    }
-
     public var humidityStr: String {
         "\(humidity)%"
+    }
+    
+    public var windStr: String {
+        "\(windSpeed)m/s"
     }
 }

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import AppLogger
 
 public protocol NetworkService {
     func sendRequest<T: Decodable>(endpoint: Endpoint, responseModel: T.Type)
@@ -41,7 +42,7 @@ extension NetworkService {
         if let body = endpoint.body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
         }
-        print(request)
+        AppLogger.log(tag: .network, request)
         do {
             let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
             guard let response = response as? HTTPURLResponse else {
@@ -49,7 +50,7 @@ extension NetworkService {
             }
             switch response.statusCode {
             case 200...299:
-                print(String(data: data, encoding: .utf8) ?? "")
+                AppLogger.log(tag: .responses, data)
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .secondsSince1970
                 guard let decodedResponse = try? decoder.decode(responseModel, from: data) else {

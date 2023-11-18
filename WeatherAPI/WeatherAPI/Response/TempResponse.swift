@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct TempResponse: Codable {
+public struct TempResponse: Codable {
     let day: Double?
     let min: Double?
     let max: Double?

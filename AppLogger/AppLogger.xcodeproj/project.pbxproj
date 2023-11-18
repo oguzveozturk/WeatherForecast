@@ -7,92 +7,59 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F42F21B92B09696C005F8033 /* AppLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21B82B09696C005F8033 /* AppLogger.framework */; };
-		F42F21BA2B09696C005F8033 /* AppLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21B82B09696C005F8033 /* AppLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		F46C15242B05447C00D74146 /* NetworkService.h in Headers */ = {isa = PBXBuildFile; fileRef = F46C15232B05447C00D74146 /* NetworkService.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F46C152C2B05449E00D74146 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C152B2B05449E00D74146 /* NetworkService.swift */; };
-		F46C152E2B0544F500D74146 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C152D2B0544F500D74146 /* RequestError.swift */; };
-		F46C15302B05450900D74146 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C152F2B05450900D74146 /* Endpoint.swift */; };
-		F46C15322B05451B00D74146 /* RequestMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C15312B05451B00D74146 /* RequestMethod.swift */; };
+		F42F21AC2B0966E2005F8033 /* AppLogger.h in Headers */ = {isa = PBXBuildFile; fileRef = F42F21AB2B0966E2005F8033 /* AppLogger.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F42F21B42B0966F2005F8033 /* AppLogger.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21B32B0966F2005F8033 /* AppLogger.swift */; };
+		F42F21B62B09670C005F8033 /* LogTag.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21B52B09670C005F8033 /* LogTag.swift */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXCopyFilesBuildPhase section */
-		F42F21BB2B09696C005F8033 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				F42F21BA2B09696C005F8033 /* AppLogger.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXCopyFilesBuildPhase section */
-
 /* Begin PBXFileReference section */
-		F42F21B82B09696C005F8033 /* AppLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F46C15202B05447C00D74146 /* NetworkService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F46C15232B05447C00D74146 /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
-		F46C152B2B05449E00D74146 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		F46C152D2B0544F500D74146 /* RequestError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestError.swift; sourceTree = "<group>"; };
-		F46C152F2B05450900D74146 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
-		F46C15312B05451B00D74146 /* RequestMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestMethod.swift; sourceTree = "<group>"; };
+		F42F21A82B0966E2005F8033 /* AppLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = AppLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F42F21AB2B0966E2005F8033 /* AppLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppLogger.h; sourceTree = "<group>"; };
+		F42F21B32B0966F2005F8033 /* AppLogger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppLogger.swift; sourceTree = "<group>"; };
+		F42F21B52B09670C005F8033 /* LogTag.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogTag.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F46C151D2B05447C00D74146 /* Frameworks */ = {
+		F42F21A52B0966E2005F8033 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F42F21B92B09696C005F8033 /* AppLogger.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F42F21B72B09696C005F8033 /* Frameworks */ = {
+		F42F219E2B0966E2005F8033 = {
 			isa = PBXGroup;
 			children = (
-				F42F21B82B09696C005F8033 /* AppLogger.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		F46C15162B05447C00D74146 = {
-			isa = PBXGroup;
-			children = (
-				F46C15222B05447C00D74146 /* NetworkService */,
-				F46C152A2B05449000D74146 /* Resources */,
-				F46C15212B05447C00D74146 /* Products */,
-				F42F21B72B09696C005F8033 /* Frameworks */,
+				F42F21AA2B0966E2005F8033 /* AppLogger */,
+				F42F21B22B0966E6005F8033 /* Resources */,
+				F42F21A92B0966E2005F8033 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F46C15212B05447C00D74146 /* Products */ = {
+		F42F21A92B0966E2005F8033 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F46C15202B05447C00D74146 /* NetworkService.framework */,
+				F42F21A82B0966E2005F8033 /* AppLogger.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F46C15222B05447C00D74146 /* NetworkService */ = {
+		F42F21AA2B0966E2005F8033 /* AppLogger */ = {
 			isa = PBXGroup;
 			children = (
-				F46C152B2B05449E00D74146 /* NetworkService.swift */,
-				F46C152D2B0544F500D74146 /* RequestError.swift */,
-				F46C152F2B05450900D74146 /* Endpoint.swift */,
-				F46C15312B05451B00D74146 /* RequestMethod.swift */,
+				F42F21B32B0966F2005F8033 /* AppLogger.swift */,
+				F42F21B52B09670C005F8033 /* LogTag.swift */,
 			);
-			path = NetworkService;
+			path = AppLogger;
 			sourceTree = "<group>";
 		};
-		F46C152A2B05449000D74146 /* Resources */ = {
+		F42F21B22B0966E6005F8033 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				F46C15232B05447C00D74146 /* NetworkService.h */,
+				F42F21AB2B0966E2005F8033 /* AppLogger.h */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -100,52 +67,51 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F46C151B2B05447C00D74146 /* Headers */ = {
+		F42F21A32B0966E2005F8033 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F46C15242B05447C00D74146 /* NetworkService.h in Headers */,
+				F42F21AC2B0966E2005F8033 /* AppLogger.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F46C151F2B05447C00D74146 /* NetworkService */ = {
+		F42F21A72B0966E2005F8033 /* AppLogger */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F46C15272B05447C00D74146 /* Build configuration list for PBXNativeTarget "NetworkService" */;
+			buildConfigurationList = F42F21AF2B0966E2005F8033 /* Build configuration list for PBXNativeTarget "AppLogger" */;
 			buildPhases = (
-				F46C151B2B05447C00D74146 /* Headers */,
-				F46C151C2B05447C00D74146 /* Sources */,
-				F46C151D2B05447C00D74146 /* Frameworks */,
-				F46C151E2B05447C00D74146 /* Resources */,
-				F42F21BB2B09696C005F8033 /* Embed Frameworks */,
+				F42F21A32B0966E2005F8033 /* Headers */,
+				F42F21A42B0966E2005F8033 /* Sources */,
+				F42F21A52B0966E2005F8033 /* Frameworks */,
+				F42F21A62B0966E2005F8033 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = NetworkService;
-			productName = NetworkService;
-			productReference = F46C15202B05447C00D74146 /* NetworkService.framework */;
+			name = AppLogger;
+			productName = AppLogger;
+			productReference = F42F21A82B0966E2005F8033 /* AppLogger.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F46C15172B05447C00D74146 /* Project object */ = {
+		F42F219F2B0966E2005F8033 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					F46C151F2B05447C00D74146 = {
+					F42F21A72B0966E2005F8033 = {
 						CreatedOnToolsVersion = 15.0.1;
 						LastSwiftMigration = 1500;
 					};
 				};
 			};
-			buildConfigurationList = F46C151A2B05447C00D74146 /* Build configuration list for PBXProject "NetworkService" */;
+			buildConfigurationList = F42F21A22B0966E2005F8033 /* Build configuration list for PBXProject "AppLogger" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -153,18 +119,18 @@
 				en,
 				Base,
 			);
-			mainGroup = F46C15162B05447C00D74146;
-			productRefGroup = F46C15212B05447C00D74146 /* Products */;
+			mainGroup = F42F219E2B0966E2005F8033;
+			productRefGroup = F42F21A92B0966E2005F8033 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F46C151F2B05447C00D74146 /* NetworkService */,
+				F42F21A72B0966E2005F8033 /* AppLogger */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F46C151E2B05447C00D74146 /* Resources */ = {
+		F42F21A62B0966E2005F8033 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -174,21 +140,19 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F46C151C2B05447C00D74146 /* Sources */ = {
+		F42F21A42B0966E2005F8033 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F46C15322B05451B00D74146 /* RequestMethod.swift in Sources */,
-				F46C152E2B0544F500D74146 /* RequestError.swift in Sources */,
-				F46C15302B05450900D74146 /* Endpoint.swift in Sources */,
-				F46C152C2B05449E00D74146 /* NetworkService.swift in Sources */,
+				F42F21B42B0966F2005F8033 /* AppLogger.swift in Sources */,
+				F42F21B62B09670C005F8033 /* LogTag.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		F46C15252B05447C00D74146 /* Debug */ = {
+		F42F21AD2B0966E2005F8033 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -254,7 +218,7 @@
 			};
 			name = Debug;
 		};
-		F46C15262B05447C00D74146 /* Release */ = {
+		F42F21AE2B0966E2005F8033 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -313,7 +277,7 @@
 			};
 			name = Release;
 		};
-		F46C15282B05447C00D74146 /* Debug */ = {
+		F42F21B02B0966E2005F8033 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -337,7 +301,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.NetworkService;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.AppLogger;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -347,7 +311,7 @@
 			};
 			name = Debug;
 		};
-		F46C15292B05447C00D74146 /* Release */ = {
+		F42F21B12B0966E2005F8033 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -371,7 +335,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.NetworkService;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.AppLogger;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -383,25 +347,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F46C151A2B05447C00D74146 /* Build configuration list for PBXProject "NetworkService" */ = {
+		F42F21A22B0966E2005F8033 /* Build configuration list for PBXProject "AppLogger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F46C15252B05447C00D74146 /* Debug */,
-				F46C15262B05447C00D74146 /* Release */,
+				F42F21AD2B0966E2005F8033 /* Debug */,
+				F42F21AE2B0966E2005F8033 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F46C15272B05447C00D74146 /* Build configuration list for PBXNativeTarget "NetworkService" */ = {
+		F42F21AF2B0966E2005F8033 /* Build configuration list for PBXNativeTarget "AppLogger" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F46C15282B05447C00D74146 /* Debug */,
-				F46C15292B05447C00D74146 /* Release */,
+				F42F21B02B0966E2005F8033 /* Debug */,
+				F42F21B12B0966E2005F8033 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F46C15172B05447C00D74146 /* Project object */;
+	rootObject = F42F219F2B0966E2005F8033 /* Project object */;
 }

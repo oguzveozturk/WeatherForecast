@@ -20,6 +20,9 @@
       location = "group:Cache/Cache.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:AppLogger/AppLogger.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Common/Common.xcodeproj">
    </FileRef>
 </Workspace>

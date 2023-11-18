@@ -5,7 +5,7 @@
 //  Created by Oğuz Öztürk on 17.11.2023.
 //
 
-import WeatherAPI
+import struct WeatherAPI.ForecastDTO
 import LocationManager
 import Common
 
@@ -19,7 +19,7 @@ protocol ForecastSearchPresenterProtocol: AnyObject {
     func didSelect(item at: Int)
 }
 
-final class ForecastSearchPresenter: NSObject, ForecastSearchPresenterProtocol {
+final class ForecastSearchPresenter: ForecastSearchPresenterProtocol {
     private let view: ForecastSearchControllerProtocol!
     private let interactor: ForecastSearchInteractorProtocol!
     private let router: ForecastSearchRouterProtocol!
@@ -34,7 +34,6 @@ final class ForecastSearchPresenter: NSObject, ForecastSearchPresenterProtocol {
         self.view = view
         self.router = router
         self.locationManager = locationManager
-        super.init()
     }
     
     func load() {
@@ -82,5 +81,9 @@ extension ForecastSearchPresenter: ForecastSearchInteractorDelegate {
 extension ForecastSearchPresenter: LocationManagerObserver {
     func locationDidReceive(lat: Double, lon: Double) {
         search(lat: lat, lon: lon)
+    }
+    
+    func locationDidReceive(error: Error) {
+        view.showAlert(message: error.localizedDescription)
     }
 }

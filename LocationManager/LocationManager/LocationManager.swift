@@ -9,6 +9,7 @@ import CoreLocation
 
 public protocol LocationManagerObserver: AnyObject {
     func locationDidReceive(lat: Double, lon: Double)
+    func locationDidReceive(error: Error)
 }
 
 public protocol LocationManagerProtocol {
@@ -22,14 +23,17 @@ public protocol LocationManagerProtocol {
 public final class LocationManager: NSObject {
     weak public var observer: LocationManagerObserver?
     
-    private let geoCoder = CLGeocoder()
+    private var geoCoder: CLGeocoder
+    private var locationManager: CLLocationManager
     
-    private lazy var locationManager: CLLocationManager = {
-        let manager = CLLocationManager()
-        manager.requestWhenInUseAuthorization()
-        manager.delegate = self
-        return manager
-    }()
+    public init(geoCoder: CLGeocoder = .init(),
+                locationManager: CLLocationManager = .init()) {
+        self.geoCoder = geoCoder
+        self.locationManager = locationManager
+        super.init()
+        locationManager.requestWhenInUseAuthorization()
+        locationManager.delegate = self
+    }
 }
 
 extension LocationManager: CLLocationManagerDelegate {
@@ -51,8 +55,13 @@ extension LocationManager: LocationManagerProtocol {
     public func geocodeAddress(for text: String?) {
         guard let text = text, !text.isEmpty else { return }
         geoCoder.geocodeAddressString(text) { [weak self] (placemarks, error) in
-            guard let location = placemarks?.first?.location?.coordinate else { return }
-            self?.observer?.locationDidReceive(lat: location.latitude, lon: location.longitude)
+            if let error = error {
+                self?.observer?.locationDidReceive(error: error)
+            } else if let location = placemarks?.first?.location?.coordinate {
+                self?.observer?.locationDidReceive(lat: location.latitude, lon: location.longitude)
+            } else {
+                self?.observer?.locationDidReceive(error: NSError(domain: "Location Manager", code: 404, userInfo: [ NSLocalizedDescriptionKey: "Location not found"]))
+            }
         }
     }
 }

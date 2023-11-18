@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct RainResponse: Codable {
+public struct RainResponse: Codable {
     let the1H: Double?
 
     enum CodingKeys: String, CodingKey {

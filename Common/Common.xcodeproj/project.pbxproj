@@ -12,6 +12,7 @@
 		F42F21582B08E4DB005F8033 /* Userdefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21572B08E4DB005F8033 /* Userdefaults+Extension.swift */; };
 		F42F215A2B08EB3A005F8033 /* TempatureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21592B08EB3A005F8033 /* TempatureUnit.swift */; };
 		F42F21862B09122C005F8033 /* UITableView+EmptyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21852B09122C005F8033 /* UITableView+EmptyMessage.swift */; };
+		F42F21972B093954005F8033 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21962B093954005F8033 /* JSONParser.swift */; };
 		F438E82A2B02BBF100AB65AD /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = F438E8292B02BBF100AB65AD /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F438E8492B02C0FB00AB65AD /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E8482B02C0FB00AB65AD /* Array+Extension.swift */; };
 		F45436B02B06991000C52A7D /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436AF2B06991000C52A7D /* UITableViewCell+Extension.swift */; };
@@ -26,6 +27,7 @@
 		F42F21572B08E4DB005F8033 /* Userdefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Userdefaults+Extension.swift"; sourceTree = "<group>"; };
 		F42F21592B08EB3A005F8033 /* TempatureUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempatureUnit.swift; sourceTree = "<group>"; };
 		F42F21852B09122C005F8033 /* UITableView+EmptyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyMessage.swift"; sourceTree = "<group>"; };
+		F42F21962B093954005F8033 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
 		F438E8262B02BBF100AB65AD /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F438E8292B02BBF100AB65AD /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
 		F438E8482B02C0FB00AB65AD /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				F45436C52B06C55000C52A7D /* AlertShowable.swift */,
 				F42F21592B08EB3A005F8033 /* TempatureUnit.swift */,
 				F42F21852B09122C005F8033 /* UITableView+EmptyMessage.swift */,
+				F42F21962B093954005F8033 /* JSONParser.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -187,6 +190,7 @@
 				F42F215A2B08EB3A005F8033 /* TempatureUnit.swift in Sources */,
 				F45436B42B069D5F00C52A7D /* UIEdgeInsets+Extension.swift in Sources */,
 				F45436B22B069C9D00C52A7D /* UIView+Extension.swift in Sources */,
+				F42F21972B093954005F8033 /* JSONParser.swift in Sources */,
 				F42F21862B09122C005F8033 /* UITableView+EmptyMessage.swift in Sources */,
 				F42F21372B078533005F8033 /* GradientView.swift in Sources */,
 				F45436C62B06C55000C52A7D /* AlertShowable.swift in Sources */,

@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WeatherAPI
 import Common
 
 protocol ForecastSearchControllerProtocol: AlertShowable {

@@ -15,6 +15,14 @@
 		F42F21502B07B7AB005F8033 /* HourlyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F214F2B07B7AB005F8033 /* HourlyCell.swift */; };
 		F42F21832B09101F005F8033 /* LocationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21822B09101F005F8033 /* LocationManager.framework */; };
 		F42F21842B091020005F8033 /* LocationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21822B09101F005F8033 /* LocationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F42F218B2B093131005F8033 /* ForecastSearchPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F218A2B093131005F8033 /* ForecastSearchPresenterTests.swift */; };
+		F42F218F2B0931F2005F8033 /* ForecastSearchResponse.json in Resources */ = {isa = PBXBuildFile; fileRef = F42F218E2B0931F2005F8033 /* ForecastSearchResponse.json */; };
+		F42F21912B093268005F8033 /* MockForecastSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21902B093268005F8033 /* MockForecastSearchController.swift */; };
+		F42F21932B093279005F8033 /* MockForecastSearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21922B093279005F8033 /* MockForecastSearchRouter.swift */; };
+		F42F21952B093288005F8033 /* MockForecastSearchInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21942B093288005F8033 /* MockForecastSearchInteractor.swift */; };
+		F42F21992B094019005F8033 /* MockLocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21982B094019005F8033 /* MockLocationManager.swift */; };
+		F42F219B2B094FCA005F8033 /* MockForecastHourlyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F219A2B094FCA005F8033 /* MockForecastHourlyController.swift */; };
+		F42F219D2B094FE7005F8033 /* ForecastHourlyPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F219C2B094FE7005F8033 /* ForecastHourlyPresenterTests.swift */; };
 		F45436AE2B06987E00C52A7D /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436AD2B06987E00C52A7D /* DailyCell.swift */; };
 		F45436B72B069F2E00C52A7D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F45436B62B069F2E00C52A7D /* Kingfisher */; };
 		F45436B92B06BA7B00C52A7D /* ForecastSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436B82B06BA7B00C52A7D /* ForecastSearchPresenter.swift */; };
@@ -26,7 +34,6 @@
 		F454375C2B077E6500C52A7D /* WeatherAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F454375B2B077E6500C52A7D /* WeatherAPI.framework */; };
 		F454375D2B077E6500C52A7D /* WeatherAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F454375B2B077E6500C52A7D /* WeatherAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F4719F982B0668CF008C9D6E /* ForecastSearchModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4719F8F2B0668CE008C9D6E /* ForecastSearchModule.framework */; };
-		F4719F9D2B0668CF008C9D6E /* ForecastSearchModuleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4719F9C2B0668CF008C9D6E /* ForecastSearchModuleTests.swift */; };
 		F4719F9E2B0668CF008C9D6E /* ForecastSearchModule.h in Headers */ = {isa = PBXBuildFile; fileRef = F4719F922B0668CE008C9D6E /* ForecastSearchModule.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F4719FBB2B066A2B008C9D6E /* ForecastSearchController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4719FBA2B066A2B008C9D6E /* ForecastSearchController.swift */; };
 /* End PBXBuildFile section */
@@ -65,6 +72,14 @@
 		F42F214D2B07AC22005F8033 /* ForecastBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastBaseCell.swift; sourceTree = "<group>"; };
 		F42F214F2B07B7AB005F8033 /* HourlyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCell.swift; sourceTree = "<group>"; };
 		F42F21822B09101F005F8033 /* LocationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LocationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F42F218A2B093131005F8033 /* ForecastSearchPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSearchPresenterTests.swift; sourceTree = "<group>"; };
+		F42F218E2B0931F2005F8033 /* ForecastSearchResponse.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = ForecastSearchResponse.json; sourceTree = "<group>"; };
+		F42F21902B093268005F8033 /* MockForecastSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockForecastSearchController.swift; sourceTree = "<group>"; };
+		F42F21922B093279005F8033 /* MockForecastSearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockForecastSearchRouter.swift; sourceTree = "<group>"; };
+		F42F21942B093288005F8033 /* MockForecastSearchInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockForecastSearchInteractor.swift; sourceTree = "<group>"; };
+		F42F21982B094019005F8033 /* MockLocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockLocationManager.swift; sourceTree = "<group>"; };
+		F42F219A2B094FCA005F8033 /* MockForecastHourlyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockForecastHourlyController.swift; sourceTree = "<group>"; };
+		F42F219C2B094FE7005F8033 /* ForecastHourlyPresenterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastHourlyPresenterTests.swift; sourceTree = "<group>"; };
 		F45436AD2B06987E00C52A7D /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
 		F45436B82B06BA7B00C52A7D /* ForecastSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSearchPresenter.swift; sourceTree = "<group>"; };
 		F45436BA2B06BAE000C52A7D /* ForecastSearchBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSearchBuilder.swift; sourceTree = "<group>"; };
@@ -75,7 +90,6 @@
 		F4719F8F2B0668CE008C9D6E /* ForecastSearchModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ForecastSearchModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4719F922B0668CE008C9D6E /* ForecastSearchModule.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ForecastSearchModule.h; sourceTree = "<group>"; };
 		F4719F972B0668CF008C9D6E /* ForecastSearchModuleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ForecastSearchModuleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		F4719F9C2B0668CF008C9D6E /* ForecastSearchModuleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSearchModuleTests.swift; sourceTree = "<group>"; };
 		F4719FAB2B06691B008C9D6E /* WeatherAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4719FAF2B06691F008C9D6E /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F4719FBA2B066A2B008C9D6E /* ForecastSearchController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSearchController.swift; sourceTree = "<group>"; };
@@ -126,6 +140,27 @@
 			path = DetailHourly;
 			sourceTree = "<group>";
 		};
+		F42F21872B0930D6005F8033 /* DetailHourlyTest */ = {
+			isa = PBXGroup;
+			children = (
+				F42F219C2B094FE7005F8033 /* ForecastHourlyPresenterTests.swift */,
+				F42F219A2B094FCA005F8033 /* MockForecastHourlyController.swift */,
+			);
+			path = DetailHourlyTest;
+			sourceTree = "<group>";
+		};
+		F42F21882B0930E0005F8033 /* SearchDailyTests */ = {
+			isa = PBXGroup;
+			children = (
+				F42F218A2B093131005F8033 /* ForecastSearchPresenterTests.swift */,
+				F42F21902B093268005F8033 /* MockForecastSearchController.swift */,
+				F42F21922B093279005F8033 /* MockForecastSearchRouter.swift */,
+				F42F21942B093288005F8033 /* MockForecastSearchInteractor.swift */,
+				F42F21982B094019005F8033 /* MockLocationManager.swift */,
+			);
+			path = SearchDailyTests;
+			sourceTree = "<group>";
+		};
 		F45436AC2B06986C00C52A7D /* Cell */ = {
 			isa = PBXGroup;
 			children = (
@@ -170,7 +205,8 @@
 		F4719F9B2B0668CF008C9D6E /* ForecastSearchModuleTests */ = {
 			isa = PBXGroup;
 			children = (
-				F4719F9C2B0668CF008C9D6E /* ForecastSearchModuleTests.swift */,
+				F42F21882B0930E0005F8033 /* SearchDailyTests */,
+				F42F21872B0930D6005F8033 /* DetailHourlyTest */,
 			);
 			path = ForecastSearchModuleTests;
 			sourceTree = "<group>";
@@ -178,6 +214,7 @@
 		F4719FA92B0668EF008C9D6E /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				F42F218E2B0931F2005F8033 /* ForecastSearchResponse.json */,
 				F4719F922B0668CE008C9D6E /* ForecastSearchModule.h */,
 			);
 			path = Resources;
@@ -265,6 +302,7 @@
 					};
 					F4719F962B0668CF008C9D6E = {
 						CreatedOnToolsVersion = 15.0.1;
+						LastSwiftMigration = 1500;
 					};
 				};
 			};
@@ -302,6 +340,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42F218F2B0931F2005F8033 /* ForecastSearchResponse.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -331,7 +370,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F4719F9D2B0668CF008C9D6E /* ForecastSearchModuleTests.swift in Sources */,
+				F42F21992B094019005F8033 /* MockLocationManager.swift in Sources */,
+				F42F219B2B094FCA005F8033 /* MockForecastHourlyController.swift in Sources */,
+				F42F21932B093279005F8033 /* MockForecastSearchRouter.swift in Sources */,
+				F42F21912B093268005F8033 /* MockForecastSearchController.swift in Sources */,
+				F42F218B2B093131005F8033 /* ForecastSearchPresenterTests.swift in Sources */,
+				F42F219D2B094FE7005F8033 /* ForecastHourlyPresenterTests.swift in Sources */,
+				F42F21952B093288005F8033 /* MockForecastSearchInteractor.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -542,6 +587,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VYNNYZBQ5A;
@@ -550,6 +596,8 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.ForecastSearchModuleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -559,6 +607,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = VYNNYZBQ5A;
@@ -567,6 +616,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.ForecastSearchModuleTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

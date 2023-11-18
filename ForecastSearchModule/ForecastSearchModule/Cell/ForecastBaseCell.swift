@@ -10,10 +10,9 @@ import Common
 
 protocol ForecastSearchResultCellProtocol: AnyObject {
     associatedtype Presenter
-    associatedtype Model
     var presenter: Presenter! { get set }
     func setupLayout()
-    func configure(dto: Model)
+    func configure()
 }
 
 private extension ForecastBaseCell {
@@ -29,7 +28,7 @@ private extension ForecastBaseCell {
     }
 }
 
-class ForecastBaseCell<Presenter: ForecastSearchResultCellPresenterProtocol, Model>: UITableViewCell, ForecastSearchResultCellProtocol {
+class ForecastBaseCell<Presenter: ForecastSearchResultCellPresenterProtocol>: UITableViewCell, ForecastSearchResultCellProtocol {
     var presenter: Presenter! {
         didSet {
             presenter.load()
@@ -100,5 +99,5 @@ class ForecastBaseCell<Presenter: ForecastSearchResultCellPresenterProtocol, Mod
         ])
     }
     
-    func configure(dto: Model) {}
+    func configure() {}
 }

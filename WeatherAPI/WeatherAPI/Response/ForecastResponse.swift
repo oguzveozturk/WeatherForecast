@@ -8,7 +8,7 @@
 import Foundation
 import Common
 
-struct ForecastResponse: Codable {
+public struct ForecastResponse: Codable {
     let lat, lon: Double?
     let timezone: String?
     let timezoneOffset: Int?
@@ -23,7 +23,7 @@ struct ForecastResponse: Codable {
 }
 
 extension ForecastResponse {
-    var asForecastDTO: ForecastDTO {
+    public var asForecastDTO: ForecastDTO {
         ForecastDTO(lat: lat ?? 0,
                     lon: lon ?? 0,
                     timezone: timezone ?? "",

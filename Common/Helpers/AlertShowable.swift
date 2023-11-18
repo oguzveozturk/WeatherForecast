@@ -13,7 +13,7 @@ public protocol AlertShowable: AnyObject {
 
 public extension AlertShowable where Self: UIViewController {
     func showAlert(message: String) {
-        let alertController = UIAlertController(title: "Error", message: message, preferredStyle: .alert)
+        let alertController = UIAlertController(title: "", message: message, preferredStyle: .alert)
         alertController.addAction(.init(title: "Ok", style: .default))
         DispatchQueue.main.async {
             self.present(alertController, animated: true)

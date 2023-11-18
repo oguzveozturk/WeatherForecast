@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct DailyResponse: Codable {
+public struct DailyResponse: Codable {
     let dt: Date?
     let sunrise: Int?
     let sunset: Int?

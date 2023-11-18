@@ -7,7 +7,7 @@
 
 import UIKit
 import Common
-import WeatherAPI
+import struct WeatherAPI.DailyDTO
 import Kingfisher
 
 private extension DailyCell {
@@ -17,7 +17,7 @@ private extension DailyCell {
     }
 }
 
-final class DailyCell: ForecastBaseCell<ForecastBaseCellPresenter<DailyDTO>, DailyDTO>, ReusableView {
+final class DailyCell: ForecastBaseCell<ForecastBaseCellPresenter<DailyDTO>>, ReusableView {
     private lazy var tempatureView: GradientView = {
         let view = GradientView()
         view.layer.cornerRadius = Constants.gradientViewRadius
@@ -44,11 +44,11 @@ final class DailyCell: ForecastBaseCell<ForecastBaseCellPresenter<DailyDTO>, Dai
         ])
     }
     
-    override func configure(dto: DailyDTO) {
-        dateLabel.text = dto.day
-        titleLabel.text = dto.weather.descZip.capitalized
-        lowLabel.text = dto.low
-        highLabel.text = dto.high
-        weatherImageView.kf.setImage(with: dto.weather.firstImage)
+    override func configure() {
+        dateLabel.text = presenter.dto.day
+        titleLabel.text = presenter.dto.weather.descZip.capitalized
+        lowLabel.text = presenter.dto.low
+        highLabel.text = presenter.dto.high
+        weatherImageView.kf.setImage(with: presenter.dto.weather.firstImage)
     }
 }

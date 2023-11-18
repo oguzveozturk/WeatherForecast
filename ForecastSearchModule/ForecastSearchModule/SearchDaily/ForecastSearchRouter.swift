@@ -6,7 +6,6 @@
 //
 
 import UIKit
-import WeatherAPI
 
 enum ForecastSearchRoute {
     case hourlyDetail(ForecastHourlyBuilderData)
