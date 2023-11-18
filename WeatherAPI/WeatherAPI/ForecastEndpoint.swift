@@ -6,6 +6,7 @@
 //
 
 import NetworkService
+import Common
 
 enum ForecastEndpoint {
     case search(ForecastParameter)
@@ -22,9 +23,9 @@ extension ForecastEndpoint: Endpoint {
     var queryItems: [String : String] {
         switch self {
         case .search(let parameter):
-            return ["appid":"7b71ab4a3a64840af89d1143b16dcda4",
-                    "lat":String(parameter.lat),
-                    "lon":String(parameter.lon),
+            return ["appid": Configuration.appid,
+                    "lat": String(parameter.lat),
+                    "lon": String(parameter.lon),
                     "exclude": parameter.excludes.joined(separator: ",")]
         }
     }

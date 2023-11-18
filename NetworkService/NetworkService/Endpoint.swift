@@ -5,7 +5,7 @@
 //  Created by Oğuz Öztürk on 17.11.2023.
 //
 
-import Foundation
+import Common
 
 public protocol Endpoint {
     var scheme: String { get }
@@ -19,10 +19,10 @@ public protocol Endpoint {
 
 extension Endpoint {
     public var scheme: String {
-        return "https"
+        return Configuration.scheme
     }
 
     public var host: String {
-        return "api.openweathermap.org"
+        return Configuration.openWeatherHost
     }
 }
