@@ -36,6 +36,7 @@ class ForecastBaseCell<T>: UITableViewCell, ForecastSearchResultCellProtocol {
         let label = UILabel()
         label.font = .preferredFont(forTextStyle: .subheadline,
                                     compatibleWith: .init(legibilityWeight: .bold))
+        label.textAlignment = .center
         label.numberOfLines = 2
         return label
     }()
@@ -62,12 +63,15 @@ class ForecastBaseCell<T>: UITableViewCell, ForecastSearchResultCellProtocol {
     lazy var middleStack: UIStackView = {
         let stackView = UIStackView()
         stackView.spacing = 4
+        stackView.alignment = .center
+        stackView.distribution = .fill
         return stackView
     }()
     
     func setupLayout() {
         let labelStack = UIStackView(arrangedSubviews: [titleLabel, middleStack])
         labelStack.axis = .vertical
+        labelStack.distribution = .equalSpacing
         labelStack.spacing = 8
         let mainStack = UIStackView(arrangedSubviews: [dateLabel,
                                                        firstSeperator,
@@ -78,7 +82,7 @@ class ForecastBaseCell<T>: UITableViewCell, ForecastSearchResultCellProtocol {
         addSubview(mainStack)
         mainStack.equalToSuperView(padding: .init(16))
         NSLayoutConstraint.activate([
-            dateLabel.widthAnchor.constraint(equalToConstant: 85),
+            dateLabel.widthAnchor.constraint(equalToConstant: 55),
             weatherImageView.widthAnchor.constraint(equalToConstant: 40),
             firstSeperator.widthAnchor.constraint(equalToConstant: 1),
             secondSeperator.widthAnchor.constraint(equalToConstant: 1),

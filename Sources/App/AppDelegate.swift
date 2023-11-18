@@ -10,8 +10,12 @@ import UIKit
 @main
 final class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
+    let container = AppContainer()
+    let dependencies = Dependencies()
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        app.router.start()
+        window = UIWindow(frame: UIScreen.main.bounds)
+        container.router.start(window: window, dependencies: dependencies)
         return true
     }
 }

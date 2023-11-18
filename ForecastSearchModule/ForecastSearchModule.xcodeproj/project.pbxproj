@@ -7,13 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F42F21392B0789B6005F8033 /* DailyCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21382B0789B6005F8033 /* DailyCellPresenter.swift */; };
+		F42F21392B0789B6005F8033 /* ForecastBaseCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21382B0789B6005F8033 /* ForecastBaseCellPresenter.swift */; };
 		F42F21442B07A0F2005F8033 /* ForecastHourlyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21432B07A0F2005F8033 /* ForecastHourlyController.swift */; };
 		F42F21462B07A101005F8033 /* ForecastHourlyBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21452B07A101005F8033 /* ForecastHourlyBuilder.swift */; };
 		F42F21482B07A10A005F8033 /* ForecastHourlyPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21472B07A10A005F8033 /* ForecastHourlyPresenter.swift */; };
 		F42F214E2B07AC22005F8033 /* ForecastBaseCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F214D2B07AC22005F8033 /* ForecastBaseCell.swift */; };
 		F42F21502B07B7AB005F8033 /* HourlyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F214F2B07B7AB005F8033 /* HourlyCell.swift */; };
-		F42F21522B07B7CC005F8033 /* HourlyCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21512B07B7CC005F8033 /* HourlyCellPresenter.swift */; };
+		F42F21832B09101F005F8033 /* LocationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21822B09101F005F8033 /* LocationManager.framework */; };
+		F42F21842B091020005F8033 /* LocationManager.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21822B09101F005F8033 /* LocationManager.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F45436AE2B06987E00C52A7D /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436AD2B06987E00C52A7D /* DailyCell.swift */; };
 		F45436B72B069F2E00C52A7D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F45436B62B069F2E00C52A7D /* Kingfisher */; };
 		F45436B92B06BA7B00C52A7D /* ForecastSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436B82B06BA7B00C52A7D /* ForecastSearchPresenter.swift */; };
@@ -47,6 +48,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				F42F21842B091020005F8033 /* LocationManager.framework in Embed Frameworks */,
 				F454375D2B077E6500C52A7D /* WeatherAPI.framework in Embed Frameworks */,
 				F45437592B077E6200C52A7D /* Common.framework in Embed Frameworks */,
 			);
@@ -56,13 +58,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F42F21382B0789B6005F8033 /* DailyCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCellPresenter.swift; sourceTree = "<group>"; };
+		F42F21382B0789B6005F8033 /* ForecastBaseCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastBaseCellPresenter.swift; sourceTree = "<group>"; };
 		F42F21432B07A0F2005F8033 /* ForecastHourlyController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastHourlyController.swift; sourceTree = "<group>"; };
 		F42F21452B07A101005F8033 /* ForecastHourlyBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastHourlyBuilder.swift; sourceTree = "<group>"; };
 		F42F21472B07A10A005F8033 /* ForecastHourlyPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastHourlyPresenter.swift; sourceTree = "<group>"; };
 		F42F214D2B07AC22005F8033 /* ForecastBaseCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastBaseCell.swift; sourceTree = "<group>"; };
 		F42F214F2B07B7AB005F8033 /* HourlyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCell.swift; sourceTree = "<group>"; };
-		F42F21512B07B7CC005F8033 /* HourlyCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourlyCellPresenter.swift; sourceTree = "<group>"; };
+		F42F21822B09101F005F8033 /* LocationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = LocationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F45436AD2B06987E00C52A7D /* DailyCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyCell.swift; sourceTree = "<group>"; };
 		F45436B82B06BA7B00C52A7D /* ForecastSearchPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSearchPresenter.swift; sourceTree = "<group>"; };
 		F45436BA2B06BAE000C52A7D /* ForecastSearchBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSearchBuilder.swift; sourceTree = "<group>"; };
@@ -85,6 +87,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F454375C2B077E6500C52A7D /* WeatherAPI.framework in Frameworks */,
+				F42F21832B09101F005F8033 /* LocationManager.framework in Frameworks */,
 				F45436B72B069F2E00C52A7D /* Kingfisher in Frameworks */,
 				F45437582B077E6200C52A7D /* Common.framework in Frameworks */,
 			);
@@ -105,8 +108,8 @@
 			isa = PBXGroup;
 			children = (
 				F4719FBA2B066A2B008C9D6E /* ForecastSearchController.swift */,
-				F45436BA2B06BAE000C52A7D /* ForecastSearchBuilder.swift */,
 				F45436B82B06BA7B00C52A7D /* ForecastSearchPresenter.swift */,
+				F45436BA2B06BAE000C52A7D /* ForecastSearchBuilder.swift */,
 				F45436BC2B06BAF300C52A7D /* ForecastSearchInteractor.swift */,
 				F45436BE2B06BB0200C52A7D /* ForecastSearchRouter.swift */,
 			);
@@ -117,8 +120,8 @@
 			isa = PBXGroup;
 			children = (
 				F42F21432B07A0F2005F8033 /* ForecastHourlyController.swift */,
-				F42F21452B07A101005F8033 /* ForecastHourlyBuilder.swift */,
 				F42F21472B07A10A005F8033 /* ForecastHourlyPresenter.swift */,
+				F42F21452B07A101005F8033 /* ForecastHourlyBuilder.swift */,
 			);
 			path = DetailHourly;
 			sourceTree = "<group>";
@@ -127,10 +130,9 @@
 			isa = PBXGroup;
 			children = (
 				F45436AD2B06987E00C52A7D /* DailyCell.swift */,
-				F42F21382B0789B6005F8033 /* DailyCellPresenter.swift */,
-				F42F214D2B07AC22005F8033 /* ForecastBaseCell.swift */,
 				F42F214F2B07B7AB005F8033 /* HourlyCell.swift */,
-				F42F21512B07B7CC005F8033 /* HourlyCellPresenter.swift */,
+				F42F214D2B07AC22005F8033 /* ForecastBaseCell.swift */,
+				F42F21382B0789B6005F8033 /* ForecastBaseCellPresenter.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -184,6 +186,7 @@
 		F4719FAA2B06691B008C9D6E /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F42F21822B09101F005F8033 /* LocationManager.framework */,
 				F454375B2B077E6500C52A7D /* WeatherAPI.framework */,
 				F45437572B077E6200C52A7D /* Common.framework */,
 				F4719FAF2B06691F008C9D6E /* Common.framework */,
@@ -311,7 +314,7 @@
 			files = (
 				F42F214E2B07AC22005F8033 /* ForecastBaseCell.swift in Sources */,
 				F42F21482B07A10A005F8033 /* ForecastHourlyPresenter.swift in Sources */,
-				F42F21392B0789B6005F8033 /* DailyCellPresenter.swift in Sources */,
+				F42F21392B0789B6005F8033 /* ForecastBaseCellPresenter.swift in Sources */,
 				F4719FBB2B066A2B008C9D6E /* ForecastSearchController.swift in Sources */,
 				F45436BD2B06BAF300C52A7D /* ForecastSearchInteractor.swift in Sources */,
 				F45436B92B06BA7B00C52A7D /* ForecastSearchPresenter.swift in Sources */,
@@ -320,7 +323,6 @@
 				F45436BF2B06BB0200C52A7D /* ForecastSearchRouter.swift in Sources */,
 				F45436BB2B06BAE000C52A7D /* ForecastSearchBuilder.swift in Sources */,
 				F45436AE2B06987E00C52A7D /* DailyCell.swift in Sources */,
-				F42F21522B07B7CC005F8033 /* HourlyCellPresenter.swift in Sources */,
 				F42F21442B07A0F2005F8033 /* ForecastHourlyController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

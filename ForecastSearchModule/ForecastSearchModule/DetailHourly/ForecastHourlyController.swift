@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Common
 
 public protocol ForecastHourlyControllerProtocol: AnyObject {
-    func reloadData()
     func setTitle(text: String)
+    func setEmptyMessage(text: String)
 }
 
 final class ForecastHourlyController: UITableViewController {
@@ -24,12 +25,12 @@ final class ForecastHourlyController: UITableViewController {
 }
 
 extension ForecastHourlyController: ForecastHourlyControllerProtocol {
-    func reloadData() {
-        tableView.reloadData()
-    }
-    
     func setTitle(text: String) {
         title = text
+    }
+    
+    func setEmptyMessage(text: String) {
+        tableView.setEmptyMessage(text)
     }
 }
 
@@ -40,7 +41,7 @@ extension ForecastHourlyController {
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: HourlyCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.presenter = .init(hourlyDTO: presenter.hourlyDTO[indexPath.row], view: cell)
+        cell.presenter = .init(dto: presenter.hourlyDTO[indexPath.row], view: cell)
         return cell
     }
     

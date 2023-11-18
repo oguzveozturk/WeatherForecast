@@ -9,14 +9,8 @@ import UIKit
 import ForecastSearchModule
 
 final class AppRouter {
-    var window: UIWindow?
-
-    init() {
-        window = UIWindow(frame: UIScreen.main.bounds)
-    }
-    
-    func start() {
-        let viewController = ForecastSearchBuilder.make(service: app.service)
+    func start(window: UIWindow?, dependencies: Dependencies) {
+        let viewController = ForecastSearchBuilder.make(service: dependencies.service)
         let navigationController = UINavigationController(rootViewController: viewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

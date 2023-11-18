@@ -6,12 +6,15 @@
 //
 
 import WeatherAPI
-import CoreLocation
+import LocationManager
+import Common
 
 protocol ForecastSearchPresenterProtocol: AnyObject {
     var forecastDTO: ForecastDTO { get set }
+    
     func load()
-    func search(for location: CLLocationCoordinate2D)
+    func search(lat: Double, lon: Double)
+    func updateUnit(_ unit: TempatureUnit)
     func geocodeAddress(for text: String?)
     func didSelect(item at: Int)
 }
@@ -20,42 +23,40 @@ final class ForecastSearchPresenter: NSObject, ForecastSearchPresenterProtocol {
     private let view: ForecastSearchControllerProtocol!
     private let interactor: ForecastSearchInteractorProtocol!
     private let router: ForecastSearchRouterProtocol!
+    private let locationManager: LocationManagerProtocol
     var forecastDTO: ForecastDTO = .zero
-    
-    private lazy var locationManager: CLLocationManager = {
-        let manager = CLLocationManager()
-        manager.requestWhenInUseAuthorization()
-        manager.delegate = self
-        return manager
-    }()
     
     init(view: ForecastSearchControllerProtocol,
          interactor: ForecastSearchInteractorProtocol,
-         router: ForecastSearchRouterProtocol) {
+         router: ForecastSearchRouterProtocol,
+         locationManager: LocationManagerProtocol) {
         self.interactor = interactor
         self.view = view
         self.router = router
+        self.locationManager = locationManager
         super.init()
-        self.interactor.delegate = self
     }
     
     func load() {
-        locationManager.startUpdatingLocation()
+        locationManager.addObserver(self)
+        locationManager.requestUserLocation()
     }
     
-    func search(for location: CLLocationCoordinate2D) {
+    func updateUnit(_ unit: TempatureUnit) {
+        UserDefaults.tempatureUnit = unit
+        view.setBarMenuTitle(unit.rawValue.capitalized)
+        view.reloadData()
+    }
+    
+    func search(lat: Double, lon: Double) {
         Task {
-            await interactor.search(for: location)
+            await interactor.search(lat: lat, lon: lon)
         }
     }
     
     func geocodeAddress(for text: String?) {
-        guard let text = text, !text.isEmpty else { return }
         view.showIndicator()
-        CLGeocoder().geocodeAddressString(text) { [weak self] (placemarks, error) in
-            guard let location = placemarks?.first?.location?.coordinate else { return }
-            self?.search(for: location)
-        }
+        locationManager.geocodeAddress(for: text)
     }
     
     func didSelect(item at: Int) {
@@ -66,21 +67,20 @@ final class ForecastSearchPresenter: NSObject, ForecastSearchPresenterProtocol {
 }
 
 extension ForecastSearchPresenter: ForecastSearchInteractorDelegate {
-    func handleOutput(_ output: ForecastSearchInteractorOutput) {
+    func handle(_ output: ForecastSearchInteractorOutput) {
         view.hideIndicator()
         switch output {
         case .showForecast(let forecast):
             forecastDTO = forecast
             view.reloadData()
         case .showError(let error):
-            view.presentAlert(text: error.localizedDescription)
+            view.showAlert(message: error.localizedDescription)
         }
     }
 }
 
-extension ForecastSearchPresenter: CLLocationManagerDelegate {
-    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else { return }
-        search(for: location.coordinate)
+extension ForecastSearchPresenter: LocationManagerObserver {
+    func locationDidReceive(lat: Double, lon: Double) {
+        search(lat: lat, lon: lon)
     }
 }

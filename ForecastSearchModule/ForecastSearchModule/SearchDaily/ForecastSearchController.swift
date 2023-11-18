@@ -10,47 +10,81 @@ import WeatherAPI
 import Common
 import CoreLocation
 
-protocol ForecastSearchControllerProtocol: AnyObject {
+protocol ForecastSearchControllerProtocol: AlertShowable {
+    func setBarMenuTitle(_ text: String)
     func showIndicator()
     func hideIndicator()
     func reloadData()
-    func presentAlert(text: String)
 }
 
 final public class ForecastSearchController: UITableViewController {
     var presenter: ForecastSearchPresenterProtocol!
-    private lazy var indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+    
+    private lazy var indicator: UIActivityIndicatorView = {
+        let indicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 20, height: 20))
+        indicator.style = .large
+        return indicator
+    }()
+    
     private lazy var searchController: UISearchController = {
-       let search = UISearchController(searchResultsController: nil)
+        let search = UISearchController(searchResultsController: nil)
         search.searchBar.delegate = self
         return search
     }()
     
+    private lazy var menuBarButton: UIBarButtonItem = {
+        let actions = TempatureUnit.allCases.map { [weak self] unit in
+            UIAction(title: unit.rawValue.capitalized, image: UIImage(systemName: unit.systemImageName)) { _ in
+                self?.presenter.updateUnit(unit)
+            }
+        }
+        return UIBarButtonItem(
+            title: UserDefaults.tempatureUnit.rawValue.capitalized,
+            primaryAction: nil,
+            menu: UIMenu(title: "", children: actions)
+        )
+    }()
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(DailyCell.self)
-        tableView.backgroundView = indicator
+        configureUI()
+        prepareTableview()
+        presenter.load()
+    }
+    
+    private func configureUI() {
         view.backgroundColor = .systemBackground
         navigationItem.searchController = searchController
-        presenter.load()
+        navigationItem.rightBarButtonItem = menuBarButton
+    }
+    
+    private func prepareTableview() {
+        tableView.register(DailyCell.self)
+        tableView.backgroundView = indicator
     }
 }
 
 extension ForecastSearchController: ForecastSearchControllerProtocol {
+    func setBarMenuTitle(_ text: String) {
+        menuBarButton.title = text
+    }
+    
     func showIndicator() {
-        indicator.startAnimating()
+        DispatchQueue.main.async {
+            self.indicator.startAnimating()
+        }
     }
     
     func hideIndicator() {
-        indicator.stopAnimating()
+        DispatchQueue.main.async {
+            self.indicator.stopAnimating()
+        }
     }
     
     func reloadData() {
-        tableView.reloadData()
-    }
-    
-    func presentAlert(text: String) {
-        showAlert(message: text)
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }
 
@@ -67,12 +101,12 @@ extension ForecastSearchController {
     
     public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: DailyCell = tableView.dequeueReusableCell(for: indexPath)
-        cell.presenter = .init(dailyDTO: presenter.forecastDTO.daily[indexPath.row], view: cell)
+        cell.presenter = .init(dto: presenter.forecastDTO.daily[indexPath.row], view: cell)
         return cell
     }
     
     public override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        80
+        80 // move to constant (private extension)
     }
     
     public override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -80,5 +114,3 @@ extension ForecastSearchController {
         presenter.didSelect(item: indexPath.row)
     }
 }
-
-extension ForecastSearchController: AlertShowable {}

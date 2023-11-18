@@ -17,7 +17,7 @@ protocol ForecastSearchRouterProtocol: AnyObject {
 }
 
 final class ForecastSearchRouter: ForecastSearchRouterProtocol {
-    unowned let view: UIViewController
+    private weak var view: UIViewController?
     
     init(view: UIViewController) {
         self.view = view
@@ -27,7 +27,7 @@ final class ForecastSearchRouter: ForecastSearchRouterProtocol {
         switch route {
         case .hourlyDetail(let builderData):
             let vc = ForecastHourlyBuilder.make(builderData)
-            view.navigationController?.pushViewController(vc, animated: true)
+            view?.navigationController?.pushViewController(vc, animated: true)
         }
     }
 }

@@ -5,7 +5,7 @@
 //  Created by Oğuz Öztürk on  17.11.2023.
 //
 
-import Foundation
+import Common
 
 public struct DailyDTO {
    public let dt: Date
@@ -92,51 +92,21 @@ public struct DailyDTO {
 }
 
 extension DailyDTO {
-    
     private static var dateFormatter: DateFormatter {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEE\nMMM, d"
         return dateFormatter
     }
     
-    private static var numberFormatter: NumberFormatter {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.maximumFractionDigits = 0
-        return numberFormatter
-    }
-    
-    private static var numberFormatter2: NumberFormatter {
-        let numberFormatter = NumberFormatter()
-        numberFormatter.numberStyle = .percent
-        return numberFormatter
-    }
-
-    func convert(_ temp: Double, isCelcius: Bool = true) -> Double {
-        let celsius = temp - 273.5
-        return isCelcius ? celsius : (celsius * 9 / 5 + 32)
-    }
-    
     public var day: String {
-        return Self.dateFormatter.string(from: dt)
+        Self.dateFormatter.string(from: dt)
     }
     
     public var high: String {
-        return "\(Self.numberFormatter.string(for: convert(temp.max)) ?? "0")°"
+        UserDefaults.tempatureUnit.convertTo(temp: temp.max)
     }
     
     public var low: String {
-        return "\(Self.numberFormatter.string(for: convert(temp.min)) ?? "0")°"
-    }
-    
-    public var popStr: String {
-        return "\(Self.numberFormatter2.string(for: pop) ?? "0%")"
-    }
-    
-    public var cloudsStr: String {
-        return "\(clouds)%"
-    }
-
-    public var humidityStr: String {
-        return "Humidity: \(humidity)%"
+        UserDefaults.tempatureUnit.convertTo(temp: temp.min)
     }
 }

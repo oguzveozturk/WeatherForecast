@@ -14,34 +14,32 @@ enum ForecastSearchInteractorOutput {
 }
 
 protocol ForecastSearchInteractorProtocol: AnyObject {
-    var delegate: ForecastSearchInteractorDelegate? { get set }
-    func search(for coordinates: CLLocationCoordinate2D) async
+    var output: ForecastSearchInteractorDelegate? { get set }
+    func search(lat: Double, lon: Double) async
 }
 
 protocol ForecastSearchInteractorDelegate: AnyObject {
-    func handleOutput(_ output: ForecastSearchInteractorOutput)
+    func handle(_ output: ForecastSearchInteractorOutput)
 }
 
 final class ForecastSearchInteractor: ForecastSearchInteractorProtocol {
-    var delegate: ForecastSearchInteractorDelegate?
+    var output: ForecastSearchInteractorDelegate?
     
-    private let service: ForecastService!
+    private let service: ForecastService
     
     init(service: ForecastService) {
         self.service = service
     }
     
-    func search(for coordinates: CLLocationCoordinate2D) async {
-        let result = await service.search(parameter: .init(lat: coordinates.latitude,
-                                                           lon: coordinates.longitude,
+    func search(lat: Double, lon: Double) async {
+        let result = await service.search(parameter: .init(lat: lat,
+                                                           lon: lon,
                                                            formats: [.daily, .hourly]))
-        DispatchQueue.main.async { [weak self] in
-            switch result {
-            case .success(let response):
-                self?.delegate?.handleOutput(.showForecast(response))
-            case .failure(let err):
-                self?.delegate?.handleOutput(.showError(err))
-            }
+        switch result {
+        case .success(let response):
+            output?.handle(.showForecast(response))
+        case .failure(let err):
+            output?.handle(.showError(err))
         }
     }
 }

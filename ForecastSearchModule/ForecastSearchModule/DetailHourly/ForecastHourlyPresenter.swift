@@ -11,6 +11,7 @@ protocol ForecastHourlyPresenterProtocol {
     var hourlyDTO: [HourlyDTO] { get set }
     var currentDay: Date { get set }
     func load()
+    func setEmptyMessageIfNeeded()
 }
 
 final class ForecastHourlyPresenter {
@@ -30,6 +31,14 @@ final class ForecastHourlyPresenter {
 
 extension ForecastHourlyPresenter: ForecastHourlyPresenterProtocol {
     func load() {
-        view.setTitle(text: currentDay.formatted())
+        view.setTitle(text: currentDay.formatted(date: .complete, time: .omitted))
+        hourlyDTO = hourlyDTO.filter { Calendar.current.isDate(currentDay, equalTo: $0.dt, toGranularity: .day) }
+        setEmptyMessageIfNeeded()
+    }
+    
+    func setEmptyMessageIfNeeded() {
+        if hourlyDTO.isEmpty {
+            view.setEmptyMessage(text: "Hourly detail is only available for 48 hours")
+        }
     }
 }

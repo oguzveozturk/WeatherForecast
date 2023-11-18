@@ -7,151 +7,162 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F42F21372B078533005F8033 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21362B078533005F8033 /* GradientView.swift */; };
-		F42F21562B08BC51005F8033 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21552B08BC51005F8033 /* UIStackView+Extension.swift */; };
-		F42F21582B08E4DB005F8033 /* Userdefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21572B08E4DB005F8033 /* Userdefaults+Extension.swift */; };
-		F42F215A2B08EB3A005F8033 /* TempatureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21592B08EB3A005F8033 /* TempatureUnit.swift */; };
-		F42F21862B09122C005F8033 /* UITableView+EmptyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21852B09122C005F8033 /* UITableView+EmptyMessage.swift */; };
-		F438E82A2B02BBF100AB65AD /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = F438E8292B02BBF100AB65AD /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F438E8492B02C0FB00AB65AD /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E8482B02C0FB00AB65AD /* Array+Extension.swift */; };
-		F45436B02B06991000C52A7D /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436AF2B06991000C52A7D /* UITableViewCell+Extension.swift */; };
-		F45436B22B069C9D00C52A7D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436B12B069C9D00C52A7D /* UIView+Extension.swift */; };
-		F45436B42B069D5F00C52A7D /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436B32B069D5F00C52A7D /* UIEdgeInsets+Extension.swift */; };
-		F45436C62B06C55000C52A7D /* AlertShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436C52B06C55000C52A7D /* AlertShowable.swift */; };
+		F42F21702B090FC8005F8033 /* LocationManager.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21672B090FC8005F8033 /* LocationManager.framework */; };
+		F42F21752B090FC8005F8033 /* LocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21742B090FC8005F8033 /* LocationManagerTests.swift */; };
+		F42F21762B090FC8005F8033 /* LocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F42F216A2B090FC8005F8033 /* LocationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F42F21812B090FDE005F8033 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21802B090FDE005F8033 /* LocationManager.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		F42F21712B090FC8005F8033 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F42F215E2B090FC8005F8033 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F42F21662B090FC8005F8033;
+			remoteInfo = LocationManager;
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
-		F42F21362B078533005F8033 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		F42F21552B08BC51005F8033 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
-		F42F21572B08E4DB005F8033 /* Userdefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Userdefaults+Extension.swift"; sourceTree = "<group>"; };
-		F42F21592B08EB3A005F8033 /* TempatureUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempatureUnit.swift; sourceTree = "<group>"; };
-		F42F21852B09122C005F8033 /* UITableView+EmptyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyMessage.swift"; sourceTree = "<group>"; };
-		F438E8262B02BBF100AB65AD /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F438E8292B02BBF100AB65AD /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		F438E8482B02C0FB00AB65AD /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
-		F45436AF2B06991000C52A7D /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
-		F45436B12B069C9D00C52A7D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		F45436B32B069D5F00C52A7D /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
-		F45436C52B06C55000C52A7D /* AlertShowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertShowable.swift; sourceTree = "<group>"; };
+		F42F21672B090FC8005F8033 /* LocationManager.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = LocationManager.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F42F216A2B090FC8005F8033 /* LocationManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LocationManager.h; sourceTree = "<group>"; };
+		F42F216F2B090FC8005F8033 /* LocationManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F42F21742B090FC8005F8033 /* LocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerTests.swift; sourceTree = "<group>"; };
+		F42F21802B090FDE005F8033 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F438E8232B02BBF100AB65AD /* Frameworks */ = {
+		F42F21642B090FC8005F8033 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F42F216C2B090FC8005F8033 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F42F21702B090FC8005F8033 /* LocationManager.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F42F21352B078529005F8033 /* View */ = {
+		F42F215D2B090FC8005F8033 = {
 			isa = PBXGroup;
 			children = (
-				F42F21362B078533005F8033 /* GradientView.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F438E81C2B02BBF100AB65AD = {
-			isa = PBXGroup;
-			children = (
-				F42F21352B078529005F8033 /* View */,
-				F45436C42B06C54500C52A7D /* Helpers */,
-				F438E8302B02BBFD00AB65AD /* Extensions */,
-				F438E8282B02BBF100AB65AD /* Resources */,
-				F438E8272B02BBF100AB65AD /* Products */,
+				F42F21692B090FC8005F8033 /* LocationManager */,
+				F42F21732B090FC8005F8033 /* LocationManagerTests */,
+				F42F217F2B090FCB005F8033 /* Resources */,
+				F42F21682B090FC8005F8033 /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		F438E8272B02BBF100AB65AD /* Products */ = {
+		F42F21682B090FC8005F8033 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F438E8262B02BBF100AB65AD /* Common.framework */,
+				F42F21672B090FC8005F8033 /* LocationManager.framework */,
+				F42F216F2B090FC8005F8033 /* LocationManagerTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F438E8282B02BBF100AB65AD /* Resources */ = {
+		F42F21692B090FC8005F8033 /* LocationManager */ = {
 			isa = PBXGroup;
 			children = (
-				F438E8292B02BBF100AB65AD /* Common.h */,
+				F42F21802B090FDE005F8033 /* LocationManager.swift */,
+			);
+			path = LocationManager;
+			sourceTree = "<group>";
+		};
+		F42F21732B090FC8005F8033 /* LocationManagerTests */ = {
+			isa = PBXGroup;
+			children = (
+				F42F21742B090FC8005F8033 /* LocationManagerTests.swift */,
+			);
+			path = LocationManagerTests;
+			sourceTree = "<group>";
+		};
+		F42F217F2B090FCB005F8033 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F42F216A2B090FC8005F8033 /* LocationManager.h */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		F438E8302B02BBFD00AB65AD /* Extensions */ = {
-			isa = PBXGroup;
-			children = (
-				F438E8482B02C0FB00AB65AD /* Array+Extension.swift */,
-				F45436AF2B06991000C52A7D /* UITableViewCell+Extension.swift */,
-				F45436B12B069C9D00C52A7D /* UIView+Extension.swift */,
-				F45436B32B069D5F00C52A7D /* UIEdgeInsets+Extension.swift */,
-				F42F21552B08BC51005F8033 /* UIStackView+Extension.swift */,
-				F42F21572B08E4DB005F8033 /* Userdefaults+Extension.swift */,
-			);
-			path = Extensions;
-			sourceTree = "<group>";
-		};
-		F45436C42B06C54500C52A7D /* Helpers */ = {
-			isa = PBXGroup;
-			children = (
-				F45436C52B06C55000C52A7D /* AlertShowable.swift */,
-				F42F21592B08EB3A005F8033 /* TempatureUnit.swift */,
-				F42F21852B09122C005F8033 /* UITableView+EmptyMessage.swift */,
-			);
-			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F438E8212B02BBF100AB65AD /* Headers */ = {
+		F42F21622B090FC8005F8033 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F438E82A2B02BBF100AB65AD /* Common.h in Headers */,
+				F42F21762B090FC8005F8033 /* LocationManager.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F438E8252B02BBF100AB65AD /* Common */ = {
+		F42F21662B090FC8005F8033 /* LocationManager */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F438E82D2B02BBF100AB65AD /* Build configuration list for PBXNativeTarget "Common" */;
+			buildConfigurationList = F42F21792B090FC8005F8033 /* Build configuration list for PBXNativeTarget "LocationManager" */;
 			buildPhases = (
-				F438E8212B02BBF100AB65AD /* Headers */,
-				F438E8222B02BBF100AB65AD /* Sources */,
-				F438E8232B02BBF100AB65AD /* Frameworks */,
-				F438E8242B02BBF100AB65AD /* Resources */,
+				F42F21622B090FC8005F8033 /* Headers */,
+				F42F21632B090FC8005F8033 /* Sources */,
+				F42F21642B090FC8005F8033 /* Frameworks */,
+				F42F21652B090FC8005F8033 /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Common;
-			productName = Common;
-			productReference = F438E8262B02BBF100AB65AD /* Common.framework */;
+			name = LocationManager;
+			productName = LocationManager;
+			productReference = F42F21672B090FC8005F8033 /* LocationManager.framework */;
 			productType = "com.apple.product-type.framework";
+		};
+		F42F216E2B090FC8005F8033 /* LocationManagerTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F42F217C2B090FC8005F8033 /* Build configuration list for PBXNativeTarget "LocationManagerTests" */;
+			buildPhases = (
+				F42F216B2B090FC8005F8033 /* Sources */,
+				F42F216C2B090FC8005F8033 /* Frameworks */,
+				F42F216D2B090FC8005F8033 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F42F21722B090FC8005F8033 /* PBXTargetDependency */,
+			);
+			name = LocationManagerTests;
+			productName = LocationManagerTests;
+			productReference = F42F216F2B090FC8005F8033 /* LocationManagerTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F438E81D2B02BBF100AB65AD /* Project object */ = {
+		F42F215E2B090FC8005F8033 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1500;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					F438E8252B02BBF100AB65AD = {
+					F42F21662B090FC8005F8033 = {
 						CreatedOnToolsVersion = 15.0.1;
 						LastSwiftMigration = 1500;
 					};
+					F42F216E2B090FC8005F8033 = {
+						CreatedOnToolsVersion = 15.0.1;
+					};
 				};
 			};
-			buildConfigurationList = F438E8202B02BBF100AB65AD /* Build configuration list for PBXProject "Common" */;
+			buildConfigurationList = F42F21612B090FC8005F8033 /* Build configuration list for PBXProject "LocationManager" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -159,18 +170,26 @@
 				en,
 				Base,
 			);
-			mainGroup = F438E81C2B02BBF100AB65AD;
-			productRefGroup = F438E8272B02BBF100AB65AD /* Products */;
+			mainGroup = F42F215D2B090FC8005F8033;
+			productRefGroup = F42F21682B090FC8005F8033 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F438E8252B02BBF100AB65AD /* Common */,
+				F42F21662B090FC8005F8033 /* LocationManager */,
+				F42F216E2B090FC8005F8033 /* LocationManagerTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F438E8242B02BBF100AB65AD /* Resources */ = {
+		F42F21652B090FC8005F8033 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F42F216D2B090FC8005F8033 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -180,27 +199,34 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F438E8222B02BBF100AB65AD /* Sources */ = {
+		F42F21632B090FC8005F8033 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F42F215A2B08EB3A005F8033 /* TempatureUnit.swift in Sources */,
-				F45436B42B069D5F00C52A7D /* UIEdgeInsets+Extension.swift in Sources */,
-				F45436B22B069C9D00C52A7D /* UIView+Extension.swift in Sources */,
-				F42F21862B09122C005F8033 /* UITableView+EmptyMessage.swift in Sources */,
-				F42F21372B078533005F8033 /* GradientView.swift in Sources */,
-				F45436C62B06C55000C52A7D /* AlertShowable.swift in Sources */,
-				F45436B02B06991000C52A7D /* UITableViewCell+Extension.swift in Sources */,
-				F42F21562B08BC51005F8033 /* UIStackView+Extension.swift in Sources */,
-				F42F21582B08E4DB005F8033 /* Userdefaults+Extension.swift in Sources */,
-				F438E8492B02C0FB00AB65AD /* Array+Extension.swift in Sources */,
+				F42F21812B090FDE005F8033 /* LocationManager.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F42F216B2B090FC8005F8033 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F42F21752B090FC8005F8033 /* LocationManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		F42F21722B090FC8005F8033 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F42F21662B090FC8005F8033 /* LocationManager */;
+			targetProxy = F42F21712B090FC8005F8033 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		F438E82B2B02BBF100AB65AD /* Debug */ = {
+		F42F21772B090FC8005F8033 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -266,7 +292,7 @@
 			};
 			name = Debug;
 		};
-		F438E82C2B02BBF100AB65AD /* Release */ = {
+		F42F21782B090FC8005F8033 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -325,7 +351,7 @@
 			};
 			name = Release;
 		};
-		F438E82E2B02BBF100AB65AD /* Debug */ = {
+		F42F217A2B090FC8005F8033 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -349,7 +375,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.Common;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.LocationManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -359,7 +385,7 @@
 			};
 			name = Debug;
 		};
-		F438E82F2B02BBF100AB65AD /* Release */ = {
+		F42F217B2B090FC8005F8033 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -383,7 +409,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.Common;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.LocationManager;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -392,28 +418,71 @@
 			};
 			name = Release;
 		};
+		F42F217D2B090FC8005F8033 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VYNNYZBQ5A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.LocationManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		F42F217E2B090FC8005F8033 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = VYNNYZBQ5A;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.LocationManagerTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F438E8202B02BBF100AB65AD /* Build configuration list for PBXProject "Common" */ = {
+		F42F21612B090FC8005F8033 /* Build configuration list for PBXProject "LocationManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F438E82B2B02BBF100AB65AD /* Debug */,
-				F438E82C2B02BBF100AB65AD /* Release */,
+				F42F21772B090FC8005F8033 /* Debug */,
+				F42F21782B090FC8005F8033 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F438E82D2B02BBF100AB65AD /* Build configuration list for PBXNativeTarget "Common" */ = {
+		F42F21792B090FC8005F8033 /* Build configuration list for PBXNativeTarget "LocationManager" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F438E82E2B02BBF100AB65AD /* Debug */,
-				F438E82F2B02BBF100AB65AD /* Release */,
+				F42F217A2B090FC8005F8033 /* Debug */,
+				F42F217B2B090FC8005F8033 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F42F217C2B090FC8005F8033 /* Build configuration list for PBXNativeTarget "LocationManagerTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F42F217D2B090FC8005F8033 /* Debug */,
+				F42F217E2B090FC8005F8033 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F438E81D2B02BBF100AB65AD /* Project object */;
+	rootObject = F42F215E2B090FC8005F8033 /* Project object */;
 }

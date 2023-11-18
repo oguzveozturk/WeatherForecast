@@ -10,11 +10,10 @@ import Common
 import WeatherAPI
 import Kingfisher
 
-
-final class DailyCell: ForecastBaseCell<DailyCellPresenter>, ReusableView {
+final class DailyCell: ForecastBaseCell<ForecastBaseCellPresenter<DailyDTO>>, ReusableView {
     private lazy var tempatureView: GradientView = {
         let view = GradientView()
-        view.layer.cornerRadius = 6
+        view.layer.cornerRadius = 4
         return view
     }()
     
@@ -32,19 +31,17 @@ final class DailyCell: ForecastBaseCell<DailyCellPresenter>, ReusableView {
     
     override func setupLayout() {
         super.setupLayout()
-        middleStack.addArrangedSubview(lowLabel)
-        middleStack.addArrangedSubview(tempatureView)
-        middleStack.addArrangedSubview(highLabel)
+        middleStack.addArrangedSubviews(lowLabel, tempatureView, highLabel)
         NSLayoutConstraint.activate([
-            tempatureView.heightAnchor.constraint(equalToConstant: 12)
+            tempatureView.heightAnchor.constraint(equalToConstant: 8)
         ])
     }
     
     override func configure() {
-        dateLabel.text = presenter.dailyDTO.day
-        titleLabel.text = presenter.dailyDTO.weather.descZip.capitalized
-        lowLabel.text = presenter.dailyDTO.low
-        highLabel.text = presenter.dailyDTO.high
-        weatherImageView.kf.setImage(with: presenter.dailyDTO.weather.firstImage)
+        dateLabel.text = presenter.dto.day
+        titleLabel.text = presenter.dto.weather.descZip.capitalized
+        lowLabel.text = presenter.dto.low
+        highLabel.text = presenter.dto.high
+        weatherImageView.kf.setImage(with: presenter.dto.weather.firstImage)
     }
 }

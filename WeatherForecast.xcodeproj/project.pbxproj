@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F42F21332B0780C7005F8033 /* ForecastSearchModule.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21322B0780C7005F8033 /* ForecastSearchModule.framework */; };
 		F42F21342B0780C7005F8033 /* ForecastSearchModule.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21322B0780C7005F8033 /* ForecastSearchModule.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F42F215C2B08F7D0005F8033 /* Dependencies.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F215B2B08F7D0005F8033 /* Dependencies.swift */; };
 		F454372E2B077B9800C52A7D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F454372D2B077B9800C52A7D /* AppDelegate.swift */; };
 		F45437372B077B9900C52A7D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F45437362B077B9900C52A7D /* Assets.xcassets */; };
 		F454373A2B077B9900C52A7D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F45437382B077B9900C52A7D /* LaunchScreen.storyboard */; };
@@ -35,6 +36,7 @@
 
 /* Begin PBXFileReference section */
 		F42F21322B0780C7005F8033 /* ForecastSearchModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ForecastSearchModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F42F215B2B08F7D0005F8033 /* Dependencies.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependencies.swift; sourceTree = "<group>"; };
 		F454372A2B077B9800C52A7D /* WeatherForecast.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WeatherForecast.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F454372D2B077B9800C52A7D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F45437362B077B9900C52A7D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -100,6 +102,7 @@
 				F454372D2B077B9800C52A7D /* AppDelegate.swift */,
 				F45437442B077C1C00C52A7D /* AppContainer.swift */,
 				F45437462B077C2300C52A7D /* AppRouter.swift */,
+				F42F215B2B08F7D0005F8033 /* Dependencies.swift */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -184,6 +187,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42F215C2B08F7D0005F8033 /* Dependencies.swift in Sources */,
 				F454372E2B077B9800C52A7D /* AppDelegate.swift in Sources */,
 				F45437452B077C1C00C52A7D /* AppContainer.swift in Sources */,
 				F45437472B077C2300C52A7D /* AppRouter.swift in Sources */,

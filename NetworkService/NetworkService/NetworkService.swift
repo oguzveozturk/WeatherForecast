@@ -50,7 +50,9 @@ extension NetworkService {
             switch response.statusCode {
             case 200...299:
                 print(String(data: data, encoding: .utf8) ?? "")
-                guard let decodedResponse = try? JSONDecoder().decode(responseModel, from: data) else {
+                let decoder = JSONDecoder()
+                decoder.dateDecodingStrategy = .secondsSince1970
+                guard let decodedResponse = try? decoder.decode(responseModel, from: data) else {
                     return .failure(.decode)
                 }
                 return .success(decodedResponse)

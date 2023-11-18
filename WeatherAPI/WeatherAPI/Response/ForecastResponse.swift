@@ -24,10 +24,10 @@ struct ForecastResponse: Codable {
 
 extension ForecastResponse {
     var asForecastDTO: ForecastDTO {
-        ForecastDTO(lat: 0,
-                    lon: 0,
-                    timezone: "",
-                    timezoneOffset: 0,
+        ForecastDTO(lat: lat ?? 0,
+                    lon: lon ?? 0,
+                    timezone: timezone ?? "",
+                    timezoneOffset: timezoneOffset ?? 0,
                     hourly: hourly?.map { $0.asHourlyDTO } ?? [],
                     daily: daily?.map { $0.asDailyDTO } ?? [])
     }
