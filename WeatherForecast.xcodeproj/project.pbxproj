@@ -21,6 +21,10 @@
 		F45437472B077C2300C52A7D /* AppRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45437462B077C2300C52A7D /* AppRouter.swift */; };
 		F454374A2B077D8F00C52A7D /* WeatherAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F45437492B077D8F00C52A7D /* WeatherAPI.framework */; };
 		F454374B2B077D8F00C52A7D /* WeatherAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F45437492B077D8F00C52A7D /* WeatherAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4AE6E9D2B0A55640012AE90 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4AE6E9C2B0A55640012AE90 /* Common.framework */; };
+		F4AE6E9E2B0A55640012AE90 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4AE6E9C2B0A55640012AE90 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F4AE6EA02B0A559D0012AE90 /* NetworkService.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F4AE6E9F2B0A559D0012AE90 /* NetworkService.framework */; };
+		F4AE6EA12B0A559D0012AE90 /* NetworkService.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F4AE6E9F2B0A559D0012AE90 /* NetworkService.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +35,8 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F454374B2B077D8F00C52A7D /* WeatherAPI.framework in Embed Frameworks */,
+				F4AE6E9E2B0A55640012AE90 /* Common.framework in Embed Frameworks */,
+				F4AE6EA12B0A559D0012AE90 /* NetworkService.framework in Embed Frameworks */,
 				F42F21342B0780C7005F8033 /* ForecastSearchModule.framework in Embed Frameworks */,
 				F42F22022B0A3372005F8033 /* DependecyManagerKit.framework in Embed Frameworks */,
 			);
@@ -53,6 +59,8 @@
 		F45437442B077C1C00C52A7D /* AppContainer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppContainer.swift; sourceTree = "<group>"; };
 		F45437462B077C2300C52A7D /* AppRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppRouter.swift; sourceTree = "<group>"; };
 		F45437492B077D8F00C52A7D /* WeatherAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4AE6E9C2B0A55640012AE90 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F4AE6E9F2B0A559D0012AE90 /* NetworkService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = NetworkService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +69,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				F454374A2B077D8F00C52A7D /* WeatherAPI.framework in Frameworks */,
+				F4AE6E9D2B0A55640012AE90 /* Common.framework in Frameworks */,
+				F4AE6EA02B0A559D0012AE90 /* NetworkService.framework in Frameworks */,
 				F42F21332B0780C7005F8033 /* ForecastSearchModule.framework in Frameworks */,
 				F42F22012B0A3372005F8033 /* DependecyManagerKit.framework in Frameworks */,
 			);
@@ -121,6 +131,8 @@
 		F45437482B077D8F00C52A7D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F4AE6E9F2B0A559D0012AE90 /* NetworkService.framework */,
+				F4AE6E9C2B0A55640012AE90 /* Common.framework */,
 				F42F22002B0A3372005F8033 /* DependecyManagerKit.framework */,
 				F42F21322B0780C7005F8033 /* ForecastSearchModule.framework */,
 				F45437492B077D8F00C52A7D /* WeatherAPI.framework */,
