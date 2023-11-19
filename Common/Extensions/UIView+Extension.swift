@@ -28,5 +28,14 @@ public extension UIView {
             trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -padding.right)
         ])
     }
+    
+    func equalToSuperCenter(offsetX: CGFloat = .zero, offsetY: CGFloat = .zero) {
+        guard let superview = superview else { return }
+        translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            centerXAnchor.constraint(equalTo: superview.centerXAnchor, constant: offsetX),
+            centerYAnchor.constraint(equalTo: superview.centerYAnchor, constant: offsetY)
+        ])
+    }
 }
 

@@ -15,6 +15,7 @@ protocol ForecastSearchPresenterProtocol: AnyObject {
     func load()
     func search(lat: Double, lon: Double)
     func updateUnit(_ unit: TempatureUnit)
+    func cleanUpList()
     func geocodeAddress(for text: String?)
     func didSelect(item at: Int)
 }
@@ -53,7 +54,13 @@ final class ForecastSearchPresenter: ForecastSearchPresenterProtocol {
         }
     }
     
+    func cleanUpList() {
+        forecastDTO = .zero
+        view.reloadData()
+    }
+    
     func geocodeAddress(for text: String?) {
+        cleanUpList()
         view.showIndicator()
         locationManager.geocodeAddress(for: text)
     }
@@ -73,17 +80,19 @@ extension ForecastSearchPresenter: ForecastSearchInteractorDelegate {
             forecastDTO = forecast
             view.reloadData()
         case .showError(let error):
-            view.showAlert(message: error.localizedDescription)
+            view.showAlert(message: error)
         }
     }
 }
 
 extension ForecastSearchPresenter: LocationManagerObserver {
-    func locationDidReceive(lat: Double, lon: Double) {
-        search(lat: lat, lon: lon)
-    }
-    
-    func locationDidReceive(error: Error) {
-        view.showAlert(message: error.localizedDescription)
+    func locationDidReceive(result: LocationManagerOutput) {
+        switch result {
+        case .location((let lat, let lon)):
+            search(lat: lat, lon: lon)
+        case .showError(let error):
+            view.hideIndicator()
+            view.setEmptyMessage(text: error.customMessage)
+        }
     }
 }

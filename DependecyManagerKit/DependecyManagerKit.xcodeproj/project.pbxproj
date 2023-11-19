@@ -7,157 +7,152 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		F42F21372B078533005F8033 /* GradientView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21362B078533005F8033 /* GradientView.swift */; };
-		F42F21562B08BC51005F8033 /* UIStackView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21552B08BC51005F8033 /* UIStackView+Extension.swift */; };
-		F42F21582B08E4DB005F8033 /* Userdefaults+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21572B08E4DB005F8033 /* Userdefaults+Extension.swift */; };
-		F42F215A2B08EB3A005F8033 /* TempatureUnit.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21592B08EB3A005F8033 /* TempatureUnit.swift */; };
-		F42F21862B09122C005F8033 /* UITableView+EmptyMessage.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21852B09122C005F8033 /* UITableView+EmptyMessage.swift */; };
-		F42F21972B093954005F8033 /* JSONParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21962B093954005F8033 /* JSONParser.swift */; };
-		F42F21D72B0A2975005F8033 /* PropertyListParser.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21D62B0A2975005F8033 /* PropertyListParser.swift */; };
-		F438E82A2B02BBF100AB65AD /* Common.h in Headers */ = {isa = PBXBuildFile; fileRef = F438E8292B02BBF100AB65AD /* Common.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		F438E8492B02C0FB00AB65AD /* Array+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F438E8482B02C0FB00AB65AD /* Array+Extension.swift */; };
-		F45436B02B06991000C52A7D /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436AF2B06991000C52A7D /* UITableViewCell+Extension.swift */; };
-		F45436B22B069C9D00C52A7D /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436B12B069C9D00C52A7D /* UIView+Extension.swift */; };
-		F45436B42B069D5F00C52A7D /* UIEdgeInsets+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436B32B069D5F00C52A7D /* UIEdgeInsets+Extension.swift */; };
-		F45436C62B06C55000C52A7D /* AlertShowable.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436C52B06C55000C52A7D /* AlertShowable.swift */; };
+		F42F21F02B0A3251005F8033 /* DependecyManagerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F42F21EF2B0A3251005F8033 /* DependecyManagerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F42F21F82B0A3269005F8033 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21F72B0A3269005F8033 /* DependencyManager.swift */; };
+		F42F21FA2B0A3292005F8033 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21F92B0A3292005F8033 /* Dependency.swift */; };
+		F42F21FF2B0A3336005F8033 /* ForecastSearchModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21FE2B0A3336005F8033 /* ForecastSearchModuleInterface.swift */; };
+		F42F22092B0A34DB005F8033 /* WeatherAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42F22082B0A34DB005F8033 /* WeatherAPI.framework */; };
+		F42F220A2B0A34DB005F8033 /* WeatherAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F42F22082B0A34DB005F8033 /* WeatherAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		F42F220B2B0A34DB005F8033 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F42F220A2B0A34DB005F8033 /* WeatherAPI.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		F42F21362B078533005F8033 /* GradientView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientView.swift; sourceTree = "<group>"; };
-		F42F21552B08BC51005F8033 /* UIStackView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIStackView+Extension.swift"; sourceTree = "<group>"; };
-		F42F21572B08E4DB005F8033 /* Userdefaults+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Userdefaults+Extension.swift"; sourceTree = "<group>"; };
-		F42F21592B08EB3A005F8033 /* TempatureUnit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempatureUnit.swift; sourceTree = "<group>"; };
-		F42F21852B09122C005F8033 /* UITableView+EmptyMessage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+EmptyMessage.swift"; sourceTree = "<group>"; };
-		F42F21962B093954005F8033 /* JSONParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONParser.swift; sourceTree = "<group>"; };
-		F42F21D62B0A2975005F8033 /* PropertyListParser.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PropertyListParser.swift; sourceTree = "<group>"; };
-		F438E8262B02BBF100AB65AD /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F438E8292B02BBF100AB65AD /* Common.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Common.h; sourceTree = "<group>"; };
-		F438E8482B02C0FB00AB65AD /* Array+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extension.swift"; sourceTree = "<group>"; };
-		F45436AF2B06991000C52A7D /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
-		F45436B12B069C9D00C52A7D /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
-		F45436B32B069D5F00C52A7D /* UIEdgeInsets+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIEdgeInsets+Extension.swift"; sourceTree = "<group>"; };
-		F45436C52B06C55000C52A7D /* AlertShowable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertShowable.swift; sourceTree = "<group>"; };
+		F42F21EC2B0A3251005F8033 /* DependecyManagerKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DependecyManagerKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F42F21EF2B0A3251005F8033 /* DependecyManagerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DependecyManagerKit.h; sourceTree = "<group>"; };
+		F42F21F72B0A3269005F8033 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
+		F42F21F92B0A3292005F8033 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
+		F42F21FE2B0A3336005F8033 /* ForecastSearchModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSearchModuleInterface.swift; sourceTree = "<group>"; };
+		F42F22082B0A34DB005F8033 /* WeatherAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F42F220C2B0A34EA005F8033 /* ForecastSearchModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ForecastSearchModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		F438E8232B02BBF100AB65AD /* Frameworks */ = {
+		F42F21E92B0A3251005F8033 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F42F22092B0A34DB005F8033 /* WeatherAPI.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		F42F21352B078529005F8033 /* View */ = {
+		F42F21E22B0A3251005F8033 = {
 			isa = PBXGroup;
 			children = (
-				F45436C52B06C55000C52A7D /* AlertShowable.swift */,
-				F42F21362B078533005F8033 /* GradientView.swift */,
-				F42F21852B09122C005F8033 /* UITableView+EmptyMessage.swift */,
-			);
-			path = View;
-			sourceTree = "<group>";
-		};
-		F438E81C2B02BBF100AB65AD = {
-			isa = PBXGroup;
-			children = (
-				F42F21352B078529005F8033 /* View */,
-				F45436C42B06C54500C52A7D /* Helpers */,
-				F438E8302B02BBFD00AB65AD /* Extensions */,
-				F438E8282B02BBF100AB65AD /* Resources */,
-				F438E8272B02BBF100AB65AD /* Products */,
+				F42F21EE2B0A3251005F8033 /* DependecyManagerKit */,
+				F42F21F62B0A3258005F8033 /* Resources */,
+				F42F21ED2B0A3251005F8033 /* Products */,
+				F42F22072B0A34DB005F8033 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
-		F438E8272B02BBF100AB65AD /* Products */ = {
+		F42F21ED2B0A3251005F8033 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F438E8262B02BBF100AB65AD /* Common.framework */,
+				F42F21EC2B0A3251005F8033 /* DependecyManagerKit.framework */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F438E8282B02BBF100AB65AD /* Resources */ = {
+		F42F21EE2B0A3251005F8033 /* DependecyManagerKit */ = {
 			isa = PBXGroup;
 			children = (
-				F438E8292B02BBF100AB65AD /* Common.h */,
+				F42F21FB2B0A32DD005F8033 /* Modules */,
+				F42F21F72B0A3269005F8033 /* DependencyManager.swift */,
+				F42F21F92B0A3292005F8033 /* Dependency.swift */,
+			);
+			path = DependecyManagerKit;
+			sourceTree = "<group>";
+		};
+		F42F21F62B0A3258005F8033 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				F42F21EF2B0A3251005F8033 /* DependecyManagerKit.h */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		F438E8302B02BBFD00AB65AD /* Extensions */ = {
+		F42F21FB2B0A32DD005F8033 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
-				F438E8482B02C0FB00AB65AD /* Array+Extension.swift */,
-				F45436AF2B06991000C52A7D /* UITableViewCell+Extension.swift */,
-				F45436B12B069C9D00C52A7D /* UIView+Extension.swift */,
-				F45436B32B069D5F00C52A7D /* UIEdgeInsets+Extension.swift */,
-				F42F21552B08BC51005F8033 /* UIStackView+Extension.swift */,
-				F42F21572B08E4DB005F8033 /* Userdefaults+Extension.swift */,
+				F42F21FE2B0A3336005F8033 /* ForecastSearchModuleInterface.swift */,
 			);
-			path = Extensions;
+			path = Modules;
 			sourceTree = "<group>";
 		};
-		F45436C42B06C54500C52A7D /* Helpers */ = {
+		F42F22072B0A34DB005F8033 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				F42F21592B08EB3A005F8033 /* TempatureUnit.swift */,
-				F42F21962B093954005F8033 /* JSONParser.swift */,
-				F42F21D62B0A2975005F8033 /* PropertyListParser.swift */,
+				F42F220C2B0A34EA005F8033 /* ForecastSearchModule.framework */,
+				F42F22082B0A34DB005F8033 /* WeatherAPI.framework */,
 			);
-			path = Helpers;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		F438E8212B02BBF100AB65AD /* Headers */ = {
+		F42F21E72B0A3251005F8033 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F438E82A2B02BBF100AB65AD /* Common.h in Headers */,
+				F42F21F02B0A3251005F8033 /* DependecyManagerKit.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		F438E8252B02BBF100AB65AD /* Common */ = {
+		F42F21EB2B0A3251005F8033 /* DependecyManagerKit */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F438E82D2B02BBF100AB65AD /* Build configuration list for PBXNativeTarget "Common" */;
+			buildConfigurationList = F42F21F32B0A3251005F8033 /* Build configuration list for PBXNativeTarget "DependecyManagerKit" */;
 			buildPhases = (
-				F438E8212B02BBF100AB65AD /* Headers */,
-				F438E8222B02BBF100AB65AD /* Sources */,
-				F438E8232B02BBF100AB65AD /* Frameworks */,
-				F438E8242B02BBF100AB65AD /* Resources */,
+				F42F21E72B0A3251005F8033 /* Headers */,
+				F42F21E82B0A3251005F8033 /* Sources */,
+				F42F21E92B0A3251005F8033 /* Frameworks */,
+				F42F21EA2B0A3251005F8033 /* Resources */,
+				F42F220B2B0A34DB005F8033 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = Common;
-			productName = Common;
-			productReference = F438E8262B02BBF100AB65AD /* Common.framework */;
+			name = DependecyManagerKit;
+			productName = DependecyManagerKit;
+			productReference = F42F21EC2B0A3251005F8033 /* DependecyManagerKit.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		F438E81D2B02BBF100AB65AD /* Project object */ = {
+		F42F21E32B0A3251005F8033 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastUpgradeCheck = 1500;
 				TargetAttributes = {
-					F438E8252B02BBF100AB65AD = {
+					F42F21EB2B0A3251005F8033 = {
 						CreatedOnToolsVersion = 15.0.1;
 						LastSwiftMigration = 1500;
 					};
 				};
 			};
-			buildConfigurationList = F438E8202B02BBF100AB65AD /* Build configuration list for PBXProject "Common" */;
+			buildConfigurationList = F42F21E62B0A3251005F8033 /* Build configuration list for PBXProject "DependecyManagerKit" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -165,18 +160,18 @@
 				en,
 				Base,
 			);
-			mainGroup = F438E81C2B02BBF100AB65AD;
-			productRefGroup = F438E8272B02BBF100AB65AD /* Products */;
+			mainGroup = F42F21E22B0A3251005F8033;
+			productRefGroup = F42F21ED2B0A3251005F8033 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F438E8252B02BBF100AB65AD /* Common */,
+				F42F21EB2B0A3251005F8033 /* DependecyManagerKit */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		F438E8242B02BBF100AB65AD /* Resources */ = {
+		F42F21EA2B0A3251005F8033 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -186,29 +181,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		F438E8222B02BBF100AB65AD /* Sources */ = {
+		F42F21E82B0A3251005F8033 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F42F215A2B08EB3A005F8033 /* TempatureUnit.swift in Sources */,
-				F45436B42B069D5F00C52A7D /* UIEdgeInsets+Extension.swift in Sources */,
-				F45436B22B069C9D00C52A7D /* UIView+Extension.swift in Sources */,
-				F42F21D72B0A2975005F8033 /* PropertyListParser.swift in Sources */,
-				F42F21972B093954005F8033 /* JSONParser.swift in Sources */,
-				F42F21862B09122C005F8033 /* UITableView+EmptyMessage.swift in Sources */,
-				F42F21372B078533005F8033 /* GradientView.swift in Sources */,
-				F45436C62B06C55000C52A7D /* AlertShowable.swift in Sources */,
-				F45436B02B06991000C52A7D /* UITableViewCell+Extension.swift in Sources */,
-				F42F21562B08BC51005F8033 /* UIStackView+Extension.swift in Sources */,
-				F42F21582B08E4DB005F8033 /* Userdefaults+Extension.swift in Sources */,
-				F438E8492B02C0FB00AB65AD /* Array+Extension.swift in Sources */,
+				F42F21FA2B0A3292005F8033 /* Dependency.swift in Sources */,
+				F42F21FF2B0A3336005F8033 /* ForecastSearchModuleInterface.swift in Sources */,
+				F42F21F82B0A3269005F8033 /* DependencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin XCBuildConfiguration section */
-		F438E82B2B02BBF100AB65AD /* Debug */ = {
+		F42F21F12B0A3251005F8033 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -274,7 +260,7 @@
 			};
 			name = Debug;
 		};
-		F438E82C2B02BBF100AB65AD /* Release */ = {
+		F42F21F22B0A3251005F8033 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -333,7 +319,7 @@
 			};
 			name = Release;
 		};
-		F438E82E2B02BBF100AB65AD /* Debug */ = {
+		F42F21F42B0A3251005F8033 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -357,7 +343,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.Common;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.DependecyManagerKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -367,7 +353,7 @@
 			};
 			name = Debug;
 		};
-		F438E82F2B02BBF100AB65AD /* Release */ = {
+		F42F21F52B0A3251005F8033 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
@@ -391,7 +377,7 @@
 				MARKETING_VERSION = 1.0;
 				MODULE_VERIFIER_SUPPORTED_LANGUAGES = "objective-c objective-c++";
 				MODULE_VERIFIER_SUPPORTED_LANGUAGE_STANDARDS = "gnu17 gnu++20";
-				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.Common;
+				PRODUCT_BUNDLE_IDENTIFIER = com.oguzveozturk.DependecyManagerKit;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -403,25 +389,25 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F438E8202B02BBF100AB65AD /* Build configuration list for PBXProject "Common" */ = {
+		F42F21E62B0A3251005F8033 /* Build configuration list for PBXProject "DependecyManagerKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F438E82B2B02BBF100AB65AD /* Debug */,
-				F438E82C2B02BBF100AB65AD /* Release */,
+				F42F21F12B0A3251005F8033 /* Debug */,
+				F42F21F22B0A3251005F8033 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F438E82D2B02BBF100AB65AD /* Build configuration list for PBXNativeTarget "Common" */ = {
+		F42F21F32B0A3251005F8033 /* Build configuration list for PBXNativeTarget "DependecyManagerKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				F438E82E2B02BBF100AB65AD /* Debug */,
-				F438E82F2B02BBF100AB65AD /* Release */,
+				F42F21F42B0A3251005F8033 /* Debug */,
+				F42F21F52B0A3251005F8033 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = F438E81D2B02BBF100AB65AD /* Project object */;
+	rootObject = F42F21E32B0A3251005F8033 /* Project object */;
 }

@@ -19,10 +19,10 @@ public protocol Endpoint {
 
 extension Endpoint {
     public var scheme: String {
-        return Configuration.scheme
+        return NetworkConfig.scheme
     }
 
     public var host: String {
-        return Configuration.openWeatherHost
+        return NetworkConfig.host
     }
 }

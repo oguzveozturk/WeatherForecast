@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		F42F21BD2B096BC5005F8033 /* AppLogger.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21BC2B096BC5005F8033 /* AppLogger.framework */; };
 		F42F21BE2B096BC5005F8033 /* AppLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21BC2B096BC5005F8033 /* AppLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F42F21DF2B0A2EB7005F8033 /* WeatherAPIConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21DE2B0A2EB7005F8033 /* WeatherAPIConfig.swift */; };
 		F438E8052B02BAE100AB65AD /* WeatherAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F438E7FC2B02BAE100AB65AD /* WeatherAPI.framework */; };
 		F438E80B2B02BAE100AB65AD /* WeatherAPI.h in Headers */ = {isa = PBXBuildFile; fileRef = F438E7FF2B02BAE100AB65AD /* WeatherAPI.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F454374E2B077D9B00C52A7D /* Cache.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F454374D2B077D9B00C52A7D /* Cache.framework */; };
@@ -65,6 +66,7 @@
 
 /* Begin PBXFileReference section */
 		F42F21BC2B096BC5005F8033 /* AppLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F42F21DE2B0A2EB7005F8033 /* WeatherAPIConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherAPIConfig.swift; sourceTree = "<group>"; };
 		F438E7FC2B02BAE100AB65AD /* WeatherAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = WeatherAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F438E7FF2B02BAE100AB65AD /* WeatherAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = WeatherAPI.h; sourceTree = "<group>"; };
 		F438E8042B02BAE100AB65AD /* WeatherAPITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WeatherAPITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -146,6 +148,7 @@
 				F46C14F02B04171A00D74146 /* ForecastEndpoint.swift */,
 				F46C14EE2B04169100D74146 /* ForecastService.swift */,
 				F46C15082B05255200D74146 /* ForecastParameter.swift */,
+				F42F21DE2B0A2EB7005F8033 /* WeatherAPIConfig.swift */,
 			);
 			path = WeatherAPI;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				F4719FD12B06875C008C9D6E /* RainResponse.swift in Sources */,
 				F4719FCB2B068744008C9D6E /* WeatherResponse.swift in Sources */,
 				F4719FD52B06876B008C9D6E /* FeelsLikeResponse.swift in Sources */,
+				F42F21DF2B0A2EB7005F8033 /* WeatherAPIConfig.swift in Sources */,
 				F4719FC92B068739008C9D6E /* FeelsLikeDTO.swift in Sources */,
 				F46C14FC2B04289500D74146 /* ForecastResponse.swift in Sources */,
 				F4719FC12B0686EC008C9D6E /* HourlyDTO.swift in Sources */,

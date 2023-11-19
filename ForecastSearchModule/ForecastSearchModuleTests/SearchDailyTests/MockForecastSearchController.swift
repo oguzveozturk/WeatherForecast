@@ -38,6 +38,18 @@ final class MockForecastSearchController: ForecastSearchControllerProtocol {
         invokedHideIndicatorCount += 1
     }
 
+    var invokedSetEmptyMessage = false
+    var invokedSetEmptyMessageCount = 0
+    var invokedSetEmptyMessageParameters: (text: String, Void)?
+    var invokedSetEmptyMessageParametersList = [(text: String, Void)]()
+
+    func setEmptyMessage(text: String) {
+        invokedSetEmptyMessage = true
+        invokedSetEmptyMessageCount += 1
+        invokedSetEmptyMessageParameters = (text, ())
+        invokedSetEmptyMessageParametersList.append((text, ()))
+    }
+
     var invokedReloadData = false
     var invokedReloadDataCount = 0
 

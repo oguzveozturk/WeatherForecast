@@ -14,13 +14,15 @@ final class ForecastHourlyPresenterTests: XCTestCase {
     private var presenter: ForecastHourlyPresenter!
     private var view: MockForecastHourlyController!
     var hourlyDTO: [HourlyDTO] = []
-    var selectedDay: Date = .init()
+    var selectedDay: Date!
     
     override func setUp() {
         super.setUp()
         view = MockForecastHourlyController()
         let forecastDTO = forecastDTO
-        presenter = .init(view: view, hourlyDTO: forecastDTO.hourly, selectedDay: forecastDTO.daily[0].dt)
+        hourlyDTO = forecastDTO.hourly
+        selectedDay = forecastDTO.daily[0].dt
+        presenter = .init(view: view, hourlyDTO: hourlyDTO, selectedDay: selectedDay)
     }
     
     override func tearDown() {

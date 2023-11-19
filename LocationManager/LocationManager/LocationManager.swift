@@ -7,9 +7,13 @@
 
 import CoreLocation
 
+public enum LocationManagerOutput {
+    case location((lat:Double, lon:Double))
+    case showError(LocationError)
+}
+
 public protocol LocationManagerObserver: AnyObject {
-    func locationDidReceive(lat: Double, lon: Double)
-    func locationDidReceive(error: Error)
+    func locationDidReceive(result: LocationManagerOutput)
 }
 
 public protocol LocationManagerProtocol {
@@ -23,8 +27,8 @@ public protocol LocationManagerProtocol {
 public final class LocationManager: NSObject {
     weak public var observer: LocationManagerObserver?
     
-    private var geoCoder: CLGeocoder
-    private var locationManager: CLLocationManager
+    private let geoCoder: CLGeocoder
+    private let locationManager: CLLocationManager
     
     public init(geoCoder: CLGeocoder = .init(),
                 locationManager: CLLocationManager = .init()) {
@@ -34,12 +38,20 @@ public final class LocationManager: NSObject {
         locationManager.requestWhenInUseAuthorization()
         locationManager.delegate = self
     }
+    
+    private func checkPermission(status: CLAuthorizationStatus) {
+        switch status {
+        case .denied, .restricted:
+            observer?.locationDidReceive(result: .showError(.unauthorized))
+        default: break
+        }
+    }
 }
 
 extension LocationManager: CLLocationManagerDelegate {
     public func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let location = locations.first else { return }
-        observer?.locationDidReceive(lat: location.coordinate.latitude, lon: location.coordinate.longitude)
+        guard let location = locations.first?.coordinate else { return }
+        observer?.locationDidReceive(result: .location((location.latitude,location.longitude)))
     }
 }
 
@@ -50,17 +62,22 @@ extension LocationManager: LocationManagerProtocol {
     
     public func requestUserLocation() {
         locationManager.startUpdatingLocation()
+        checkPermission(status: locationManager.authorizationStatus)
+    }
+    
+    public func locationManagerDidChangeAuthorization(_ manager: CLLocationManager) {
+        checkPermission(status: manager.authorizationStatus)
     }
     
     public func geocodeAddress(for text: String?) {
         guard let text = text, !text.isEmpty else { return }
         geoCoder.geocodeAddressString(text) { [weak self] (placemarks, error) in
-            if let error = error {
-                self?.observer?.locationDidReceive(error: error)
+            if let _ = error {
+                self?.observer?.locationDidReceive(result: .showError(.locationNotFound))
             } else if let location = placemarks?.first?.location?.coordinate {
-                self?.observer?.locationDidReceive(lat: location.latitude, lon: location.longitude)
+                self?.observer?.locationDidReceive(result: .location((location.latitude,location.longitude)))
             } else {
-                self?.observer?.locationDidReceive(error: NSError(domain: "Location Manager", code: 404, userInfo: [ NSLocalizedDescriptionKey: "Location not found"]))
+                self?.observer?.locationDidReceive(result: .showError(.noResponse))
             }
         }
     }

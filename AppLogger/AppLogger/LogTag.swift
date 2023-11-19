@@ -8,7 +8,6 @@
 import Foundation
 
 public enum LogTag {
-    
     case error
     case warning
     case success

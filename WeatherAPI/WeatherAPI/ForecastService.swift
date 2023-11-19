@@ -14,7 +14,7 @@ public protocol ForecastServiceable {
 }
 
 public struct ForecastService: NetworkService {
-    private let cache: Cache<ForecastParameter, ForecastResponse> = .fromDisk(file: String(describing: Self.self)) ?? .init(entryLifetime: 3600)
+    private let cache: Cache<ForecastParameter, ForecastResponse> = .fromDisk(file: String(describing: Self.self)) ?? .init()
     public init() { }
 }
 

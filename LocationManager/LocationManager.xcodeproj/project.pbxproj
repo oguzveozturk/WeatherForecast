@@ -11,6 +11,7 @@
 		F42F21752B090FC8005F8033 /* LocationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21742B090FC8005F8033 /* LocationManagerTests.swift */; };
 		F42F21762B090FC8005F8033 /* LocationManager.h in Headers */ = {isa = PBXBuildFile; fileRef = F42F216A2B090FC8005F8033 /* LocationManager.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F42F21812B090FDE005F8033 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21802B090FDE005F8033 /* LocationManager.swift */; };
+		F42F21CF2B0A0D1D005F8033 /* LocationError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21CE2B0A0D1D005F8033 /* LocationError.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +30,8 @@
 		F42F216F2B090FC8005F8033 /* LocationManagerTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LocationManagerTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42F21742B090FC8005F8033 /* LocationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManagerTests.swift; sourceTree = "<group>"; };
 		F42F21802B090FDE005F8033 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		F42F21CE2B0A0D1D005F8033 /* LocationError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationError.swift; sourceTree = "<group>"; };
+		F42F21D22B0A19A7005F8033 /* AppLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +60,7 @@
 				F42F21732B090FC8005F8033 /* LocationManagerTests */,
 				F42F217F2B090FCB005F8033 /* Resources */,
 				F42F21682B090FC8005F8033 /* Products */,
+				F42F21D12B0A19A7005F8033 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -73,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				F42F21802B090FDE005F8033 /* LocationManager.swift */,
+				F42F21CE2B0A0D1D005F8033 /* LocationError.swift */,
 			);
 			path = LocationManager;
 			sourceTree = "<group>";
@@ -91,6 +96,14 @@
 				F42F216A2B090FC8005F8033 /* LocationManager.h */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		F42F21D12B0A19A7005F8033 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F42F21D22B0A19A7005F8033 /* AppLogger.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -204,6 +217,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F42F21812B090FDE005F8033 /* LocationManager.swift in Sources */,
+				F42F21CF2B0A0D1D005F8033 /* LocationError.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

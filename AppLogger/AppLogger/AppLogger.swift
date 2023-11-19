@@ -18,7 +18,11 @@ public struct AppLogger {
         let shortFileName = URL(string: file)?.lastPathComponent ?? "---"
         
         let output = items.map {
-            if let itm = $0 as? CustomStringConvertible {
+            if let itm = $0 as? HTTPURLResponse {
+                let statusCode = "Status Code: \(itm.statusCode)\n"
+                let headers = itm.allHeaderFields.map { "\($0.key): \($0.value)" }.joined(separator: "\n")
+                return statusCode + headers
+            } else if let itm = $0 as? CustomStringConvertible {
                 return "\(itm.description)"
             } else {
                 return "\($0)"

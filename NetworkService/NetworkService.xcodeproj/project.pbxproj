@@ -11,6 +11,7 @@
 		F42F21BA2B09696C005F8033 /* AppLogger.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21B82B09696C005F8033 /* AppLogger.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F42F21CC2B097D36005F8033 /* Common.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21CB2B097D36005F8033 /* Common.framework */; };
 		F42F21CD2B097D36005F8033 /* Common.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F42F21CB2B097D36005F8033 /* Common.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F42F21DD2B0A2C9B005F8033 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21DC2B0A2C9B005F8033 /* NetworkConfig.swift */; };
 		F46C15242B05447C00D74146 /* NetworkService.h in Headers */ = {isa = PBXBuildFile; fileRef = F46C15232B05447C00D74146 /* NetworkService.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F46C152C2B05449E00D74146 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C152B2B05449E00D74146 /* NetworkService.swift */; };
 		F46C152E2B0544F500D74146 /* RequestError.swift in Sources */ = {isa = PBXBuildFile; fileRef = F46C152D2B0544F500D74146 /* RequestError.swift */; };
@@ -36,6 +37,7 @@
 /* Begin PBXFileReference section */
 		F42F21B82B09696C005F8033 /* AppLogger.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = AppLogger.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42F21CB2B097D36005F8033 /* Common.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = Common.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		F42F21DC2B0A2C9B005F8033 /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		F46C15202B05447C00D74146 /* NetworkService.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NetworkService.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F46C15232B05447C00D74146 /* NetworkService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NetworkService.h; sourceTree = "<group>"; };
 		F46C152B2B05449E00D74146 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
@@ -91,6 +93,7 @@
 				F46C152D2B0544F500D74146 /* RequestError.swift */,
 				F46C152F2B05450900D74146 /* Endpoint.swift */,
 				F46C15312B05451B00D74146 /* RequestMethod.swift */,
+				F42F21DC2B0A2C9B005F8033 /* NetworkConfig.swift */,
 			);
 			path = NetworkService;
 			sourceTree = "<group>";
@@ -185,6 +188,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F46C15322B05451B00D74146 /* RequestMethod.swift in Sources */,
+				F42F21DD2B0A2C9B005F8033 /* NetworkConfig.swift in Sources */,
 				F46C152E2B0544F500D74146 /* RequestError.swift in Sources */,
 				F46C15302B05450900D74146 /* Endpoint.swift in Sources */,
 				F46C152C2B05449E00D74146 /* NetworkService.swift in Sources */,

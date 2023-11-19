@@ -6,7 +6,14 @@
 //
 
 import WeatherAPI
+import DependecyManagerKit
+import ForecastSearchModule
 
-class Dependencies {
+final class Dependencies {
     let service = ForecastService()
+    
+    func registerAll() {
+        DependencyManager.shared.register(value: ForecastSearchModule(),
+                                          for: ForecastSearchModuleInterface.self)
+    }
 }

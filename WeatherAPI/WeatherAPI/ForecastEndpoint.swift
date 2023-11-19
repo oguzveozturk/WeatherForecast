@@ -23,7 +23,7 @@ extension ForecastEndpoint: Endpoint {
     var queryItems: [String : String] {
         switch self {
         case .search(let parameter):
-            return ["appid": Configuration.appid,
+            return ["appid": WeatherAPIConfig.apiKey,
                     "lat": String(parameter.lat),
                     "lon": String(parameter.lon),
                     "exclude": parameter.excludes.joined(separator: ",")]

@@ -31,14 +31,14 @@ public struct WeatherDTO {
     }
 }
 
-extension Array where Element == WeatherDTO {
-    public var mainZip: String {
+public extension Array where Element == WeatherDTO {
+    var mainZip: String {
         map { $0.main.rawValue }.joined(separator: ", ")
     }
-    public var descZip: String {
+    var descZip: String {
         map { $0.description }.joined(separator: ", ")
     }
-    public var firstImage: URL? {
+    var firstImage: URL? {
         guard let icon = first?.icon else { return nil }
         return URL(string: "https://openweathermap.org/img/wn/\(icon)@2x.png")
     }

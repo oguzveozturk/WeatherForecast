@@ -42,15 +42,19 @@ extension NetworkService {
         if let body = endpoint.body {
             request.httpBody = try? JSONSerialization.data(withJSONObject: body, options: [])
         }
+        
         AppLogger.log(tag: .network, request)
+        
         do {
             let (data, response) = try await URLSession.shared.data(for: request, delegate: nil)
             guard let response = response as? HTTPURLResponse else {
                 return .failure(.noResponse)
             }
+            
+            AppLogger.log(tag: .responses, response)
+            
             switch response.statusCode {
             case 200...299:
-                AppLogger.log(tag: .responses, data)
                 let decoder = JSONDecoder()
                 decoder.dateDecodingStrategy = .secondsSince1970
                 guard let decodedResponse = try? decoder.decode(responseModel, from: data) else {

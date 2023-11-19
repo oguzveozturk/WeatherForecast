@@ -7,10 +7,19 @@
 
 import UIKit
 import ForecastSearchModule
+import DependecyManagerKit
 
 final class AppRouter {
-    func start(window: UIWindow?, dependencies: Dependencies) {
-        let viewController = ForecastSearchBuilder.make(service: dependencies.service)
+    @Dependency var forecastSearchModule: ForecastSearchModuleInterface
+    
+    let window: UIWindow?
+    
+    init(window: UIWindow?) {
+        self.window = window
+    }
+    
+    func start(dependencies: Dependencies) {
+        let viewController = forecastSearchModule.forecastSearchController(service: dependencies.service)
         let navigationController = UINavigationController(rootViewController: viewController)
         window?.rootViewController = navigationController
         window?.makeKeyAndVisible()

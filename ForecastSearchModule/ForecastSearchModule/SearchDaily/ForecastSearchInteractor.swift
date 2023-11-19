@@ -9,7 +9,7 @@ import WeatherAPI
 
 enum ForecastSearchInteractorOutput {
     case showForecast(ForecastDTO)
-    case showError(Error)
+    case showError(String)
 }
 
 protocol ForecastSearchInteractorProtocol: AnyObject {
@@ -38,7 +38,7 @@ final class ForecastSearchInteractor: ForecastSearchInteractorProtocol {
         case .success(let response):
             output?.handle(.showForecast(response))
         case .failure(let err):
-            output?.handle(.showError(err))
+            output?.handle(.showError(err.customMessage))
         }
     }
 }

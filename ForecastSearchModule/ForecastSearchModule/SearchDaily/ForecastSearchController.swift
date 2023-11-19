@@ -12,12 +12,13 @@ protocol ForecastSearchControllerProtocol: AlertShowable {
     func setBarMenuTitle(_ text: String)
     func showIndicator()
     func hideIndicator()
+    func setEmptyMessage(text: String)
     func reloadData()
 }
 
 private extension ForecastSearchController {
     enum Constants {
-        static let indicatorFrame: CGRect = .init(x: 0, y: 0, width: 20, height: 20)
+        static let indicatorOffsetY: CGFloat = -100
         static let rowHeight: CGFloat = 80
     }
 }
@@ -26,7 +27,7 @@ final public class ForecastSearchController: UITableViewController {
     var presenter: ForecastSearchPresenterProtocol!
     
     private lazy var indicator: UIActivityIndicatorView = {
-        let indicator = UIActivityIndicatorView(frame: Constants.indicatorFrame)
+        let indicator = UIActivityIndicatorView(frame: .zero)
         indicator.style = .large
         return indicator
     }()
@@ -52,6 +53,7 @@ final public class ForecastSearchController: UITableViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        setupLayout()
         configureUI()
         prepareTableview()
         presenter.load()
@@ -65,7 +67,11 @@ final public class ForecastSearchController: UITableViewController {
     
     private func prepareTableview() {
         tableView.register(DailyCell.self)
-        tableView.backgroundView = indicator
+    }
+    
+    private func setupLayout() {
+        view.addSubview(indicator)
+        indicator.equalToSuperCenter(offsetY: Constants.indicatorOffsetY)
     }
 }
 
@@ -88,7 +94,14 @@ extension ForecastSearchController: ForecastSearchControllerProtocol {
     
     func reloadData() {
         DispatchQueue.main.async {
+            self.tableView.restore()
             self.tableView.reloadData()
+        }
+    }
+    
+    func setEmptyMessage(text: String) {
+        DispatchQueue.main.async {
+            self.tableView.setEmptyMessage(text)
         }
     }
 }

@@ -87,6 +87,21 @@ final class ForecastSearchPresenterTests: XCTestCase {
         XCTAssertEqual(interactor.invokedSearchParametersList.map(\.lon), [29.1563])
     }
     
+    func test_cleanUpList() {
+        presenter.handle(.showForecast(forecastDTO))
+        
+        XCTAssertEqual(presenter.forecastDTO.daily.count, 8)
+        XCTAssertEqual(presenter.forecastDTO.hourly.count, 48)
+        XCTAssertEqual(view.invokedReloadDataCount, 1)
+        
+        presenter.cleanUpList()
+        
+        XCTAssertTrue(presenter.forecastDTO.hourly.isEmpty)
+        XCTAssertTrue(presenter.forecastDTO.daily.isEmpty)
+        XCTAssertTrue(view.invokedReloadData)
+        XCTAssertEqual(view.invokedReloadDataCount, 2)
+    }
+    
     func test_geocodeAddress() {
         XCTAssertFalse(view.invokedShowIndicator)
         XCTAssertEqual(view.invokedShowIndicatorCount, 0)
@@ -147,7 +162,7 @@ final class ForecastSearchPresenterTests: XCTestCase {
         XCTAssertNil(view.invokedShowAlertParameters)
         XCTAssertTrue(view.invokedShowAlertParametersList.isEmpty)
         
-        presenter.handle(.showError(error))
+        presenter.handle(.showError(error.localizedDescription))
         
         XCTAssertTrue(view.invokedHideIndicator)
         XCTAssertEqual(view.invokedHideIndicatorCount, 1)
@@ -156,6 +171,20 @@ final class ForecastSearchPresenterTests: XCTestCase {
         XCTAssertEqual(view.invokedShowAlertCount, 1)
         XCTAssertEqual(view.invokedShowAlertParameters?.message, "Network Error")
         XCTAssertEqual(view.invokedShowAlertParametersList.map(\.message), ["Network Error"])
+    }
+    
+    func test_locationDidReceiveFailure() {
+        XCTAssertFalse(view.invokedSetEmptyMessage)
+        XCTAssertEqual(view.invokedSetEmptyMessageCount, 0)
+        XCTAssertNil(view.invokedSetEmptyMessageParameters)
+        XCTAssertTrue(view.invokedSetEmptyMessageParametersList.isEmpty)
+        
+        presenter.locationDidReceive(result: .showError(.locationNotFound))
+        
+        XCTAssertTrue(view.invokedSetEmptyMessage)
+        XCTAssertEqual(view.invokedSetEmptyMessageCount, 1)
+        XCTAssertEqual(view.invokedSetEmptyMessageParameters?.text, LocationError.locationNotFound.customMessage)
+        XCTAssertEqual(view.invokedSetEmptyMessageParametersList.map(\.text), [LocationError.locationNotFound.customMessage])
     }
 }
 

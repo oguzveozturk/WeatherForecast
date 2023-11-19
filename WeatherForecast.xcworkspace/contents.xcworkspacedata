@@ -20,6 +20,9 @@
       location = "group:NetworkService/NetworkService.xcodeproj">
    </FileRef>
    <FileRef
+      location = "group:DependecyManagerKit/DependecyManagerKit.xcodeproj">
+   </FileRef>
+   <FileRef
       location = "group:Cache/Cache.xcodeproj">
    </FileRef>
    <FileRef
