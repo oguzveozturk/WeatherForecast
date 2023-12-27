@@ -15,7 +15,7 @@ public class ForecastSearchModule {
 
 // MARK: - MovieModuleInterface
 extension ForecastSearchModule: ForecastSearchModuleInterface {
-    public func forecastSearchController(service: ForecastService) -> UIViewController {
+    public func forecastSearchController(service: ForecastServiceable) -> UIViewController {
         ForecastSearchBuilder.make(service: service)
     }
 }

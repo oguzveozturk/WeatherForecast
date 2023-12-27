@@ -9,5 +9,5 @@ import UIKit
 import WeatherAPI
 
 public protocol ForecastSearchModuleInterface: AnyObject {
-    func forecastSearchController(service: ForecastService) -> UIViewController
+    func forecastSearchController(service: ForecastServiceable) -> UIViewController
 }

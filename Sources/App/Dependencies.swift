@@ -10,10 +10,10 @@ import DependecyManagerKit
 import ForecastSearchModule
 
 final class Dependencies {
-    let service = ForecastService()
-    
     func registerAll() {
         DependencyManager.shared.register(value: ForecastSearchModule(),
                                           for: ForecastSearchModuleInterface.self)
+        DependencyManager.shared.register(value: ForecastService(),
+                                          for: ForecastServiceable.self)
     }
 }

@@ -16,7 +16,7 @@ final class AppDelegate: UIResponder, UIApplicationDelegate {
         window = UIWindow(frame: UIScreen.main.bounds)
         dependencies.registerAll()
         let container = AppContainer(window: window)
-        container.router.start(dependencies: dependencies)
+        container.router.start()
         return true
     }
 }

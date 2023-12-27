@@ -9,7 +9,7 @@ import WeatherAPI
 import LocationManager
 
 public final class ForecastSearchBuilder {
-    public static func make(service: ForecastService) -> ForecastSearchController {
+    public static func make(service: ForecastServiceable) -> ForecastSearchController {
         let view = ForecastSearchController()
         let router = ForecastSearchRouter(view: view)
         let interactor = ForecastSearchInteractor(service: service)

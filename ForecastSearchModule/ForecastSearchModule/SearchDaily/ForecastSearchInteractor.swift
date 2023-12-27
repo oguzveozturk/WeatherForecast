@@ -24,9 +24,9 @@ protocol ForecastSearchInteractorDelegate: AnyObject {
 final class ForecastSearchInteractor: ForecastSearchInteractorProtocol {
     var output: ForecastSearchInteractorDelegate?
     
-    private let service: ForecastService
+    private let service: ForecastServiceable
     
-    init(service: ForecastService) {
+    init(service: ForecastServiceable) {
         self.service = service
     }
     
