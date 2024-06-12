@@ -10,7 +10,6 @@
 		F42F21F02B0A3251005F8033 /* DependecyManagerKit.h in Headers */ = {isa = PBXBuildFile; fileRef = F42F21EF2B0A3251005F8033 /* DependecyManagerKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		F42F21F82B0A3269005F8033 /* DependencyManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21F72B0A3269005F8033 /* DependencyManager.swift */; };
 		F42F21FA2B0A3292005F8033 /* Dependency.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21F92B0A3292005F8033 /* Dependency.swift */; };
-		F42F21FF2B0A3336005F8033 /* ForecastSearchModuleInterface.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F21FE2B0A3336005F8033 /* ForecastSearchModuleInterface.swift */; };
 		F42F22092B0A34DB005F8033 /* WeatherAPI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42F22082B0A34DB005F8033 /* WeatherAPI.framework */; };
 		F42F220A2B0A34DB005F8033 /* WeatherAPI.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F42F22082B0A34DB005F8033 /* WeatherAPI.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -34,7 +33,6 @@
 		F42F21EF2B0A3251005F8033 /* DependecyManagerKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DependecyManagerKit.h; sourceTree = "<group>"; };
 		F42F21F72B0A3269005F8033 /* DependencyManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DependencyManager.swift; sourceTree = "<group>"; };
 		F42F21F92B0A3292005F8033 /* Dependency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dependency.swift; sourceTree = "<group>"; };
-		F42F21FE2B0A3336005F8033 /* ForecastSearchModuleInterface.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForecastSearchModuleInterface.swift; sourceTree = "<group>"; };
 		F42F22082B0A34DB005F8033 /* WeatherAPI.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = WeatherAPI.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F42F220C2B0A34EA005F8033 /* ForecastSearchModule.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = ForecastSearchModule.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -72,7 +70,6 @@
 		F42F21EE2B0A3251005F8033 /* DependecyManagerKit */ = {
 			isa = PBXGroup;
 			children = (
-				F42F21FB2B0A32DD005F8033 /* Modules */,
 				F42F21F72B0A3269005F8033 /* DependencyManager.swift */,
 				F42F21F92B0A3292005F8033 /* Dependency.swift */,
 			);
@@ -85,14 +82,6 @@
 				F42F21EF2B0A3251005F8033 /* DependecyManagerKit.h */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		F42F21FB2B0A32DD005F8033 /* Modules */ = {
-			isa = PBXGroup;
-			children = (
-				F42F21FE2B0A3336005F8033 /* ForecastSearchModuleInterface.swift */,
-			);
-			path = Modules;
 			sourceTree = "<group>";
 		};
 		F42F22072B0A34DB005F8033 /* Frameworks */ = {
@@ -186,7 +175,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				F42F21FA2B0A3292005F8033 /* Dependency.swift in Sources */,
-				F42F21FF2B0A3336005F8033 /* ForecastSearchModuleInterface.swift in Sources */,
 				F42F21F82B0A3269005F8033 /* DependencyManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

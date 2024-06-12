@@ -24,8 +24,6 @@
 		F42F219B2B094FCA005F8033 /* MockForecastHourlyController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F219A2B094FCA005F8033 /* MockForecastHourlyController.swift */; };
 		F42F219D2B094FE7005F8033 /* ForecastHourlyPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F219C2B094FE7005F8033 /* ForecastHourlyPresenterTests.swift */; };
 		F42F22062B0A33D5005F8033 /* ForecastSearchModule.swift in Sources */ = {isa = PBXBuildFile; fileRef = F42F22052B0A33D5005F8033 /* ForecastSearchModule.swift */; };
-		F42F22102B0A354A005F8033 /* DependecyManagerKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F42F220F2B0A354A005F8033 /* DependecyManagerKit.framework */; };
-		F42F22112B0A354A005F8033 /* DependecyManagerKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = F42F220F2B0A354A005F8033 /* DependecyManagerKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		F45436AE2B06987E00C52A7D /* DailyCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436AD2B06987E00C52A7D /* DailyCell.swift */; };
 		F45436B72B069F2E00C52A7D /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = F45436B62B069F2E00C52A7D /* Kingfisher */; };
 		F45436B92B06BA7B00C52A7D /* ForecastSearchPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = F45436B82B06BA7B00C52A7D /* ForecastSearchPresenter.swift */; };
@@ -59,7 +57,6 @@
 			dstSubfolderSpec = 10;
 			files = (
 				F42F21842B091020005F8033 /* LocationManager.framework in Embed Frameworks */,
-				F42F22112B0A354A005F8033 /* DependecyManagerKit.framework in Embed Frameworks */,
 				F454375D2B077E6500C52A7D /* WeatherAPI.framework in Embed Frameworks */,
 				F45437592B077E6200C52A7D /* Common.framework in Embed Frameworks */,
 			);
@@ -109,7 +106,6 @@
 				F454375C2B077E6500C52A7D /* WeatherAPI.framework in Frameworks */,
 				F42F21832B09101F005F8033 /* LocationManager.framework in Frameworks */,
 				F45436B72B069F2E00C52A7D /* Kingfisher in Frameworks */,
-				F42F22102B0A354A005F8033 /* DependecyManagerKit.framework in Frameworks */,
 				F45437582B077E6200C52A7D /* Common.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
